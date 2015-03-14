@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Project C</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project C</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Anasayfa</a></li>
+              <li class="active"><a href="problems.html">Problemler</a></li>
+              <li><a href="#">Konu Anlatımı</a></li>
+            </ul>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="E-posta" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Şifre" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Giriş</button>
+            <a class="btn btn-success" href="#" role="button">Kayıt</a>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+   <div class="container main" role="main">
+    
+        <div class="row">
+            <div class="col-md-4"><input type="text" class="form-control" placeholder="Ara"></div>
+        <div class="col-md-4"><select class="form-control">
+  <option>ID</option>
+  <option>isim</option>
+  <option>konular</option>
+  <option>zorluk</option>
+</select></div>
+            <div class="col-md-4"><label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox1" value="option1"> Çözülmüş soruları gösterme
+</label></div>
+        </div>
+        <table class="table table-hover">
+            <thead><tr><th>#</th><th>Soru adı</th><th>İlgili konular</th><th>Çözüm sayısı</th><th>Zorluk</th></tr></thead>
+            <tr><td><a href="1.html">1</a></td><td><a href="1.html">Mükemmel sayı</a></td><td>Basic Operations, Loops, Conditionals</td><td>112</td><td>Z1</td></tr>
+            <tr><td>2</td><td>Mükemmel sayı</td><td>Basic Operations, Loops, Conditionals</td><td>112</td><td>Z1</td></tr>
+            <tr class="danger"><td>3</td><td>Mükemmel sayı</td><td>Basic Operations, Loops, Conditionals</td><td>112</td><td>Z1</td></tr>
+            <tr class="success"><td>4</td><td>Mükemmel sayı</td><td>Basic Operations, Loops, Conditionals</td><td>112</td><td>Z1</td></tr>
+</table>
+       <ul class="pager">
+  <li><a href="#">Previous</a></li>
+  <li><a href="#">Next</a></li>
+</ul>
+       
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

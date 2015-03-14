@@ -1,0 +1,24 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.main-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.main > p > .btn {
+  margin: 5px 0;
+}
+
+.main .navbar .container {
+  width: auto;
+}
+.jumbotron{
+    padding: 20px;
+}
+ #editor { 
+     height: 525px;
+    }
