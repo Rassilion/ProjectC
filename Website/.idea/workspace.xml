@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ec97603-bdb1-4b4c-94bf-b3d79734cf78" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\deniz\Documents\GitHub\ProjectC\Website\css\bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\deniz\Documents\GitHub\ProjectC\Website\css\bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\deniz\Documents\GitHub\ProjectC\Website\css\bootstrap-theme.min.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.html" afterPath="$PROJECT_DIR$/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/abap.js" afterPath="$PROJECT_DIR$/js/ace/snippets/abap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/abc.js" afterPath="$PROJECT_DIR$/js/ace/snippets/abc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ace.js" afterPath="$PROJECT_DIR$/js/ace/ace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/actionscript.js" afterPath="$PROJECT_DIR$/js/ace/snippets/actionscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/ada.js" afterPath="$PROJECT_DIR$/js/ace/snippets/ada.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/apache_conf.js" afterPath="$PROJECT_DIR$/js/ace/snippets/apache_conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/applescript.js" afterPath="$PROJECT_DIR$/js/ace/snippets/applescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/asciidoc.js" afterPath="$PROJECT_DIR$/js/ace/snippets/asciidoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/assembly_x86.js" afterPath="$PROJECT_DIR$/js/ace/snippets/assembly_x86.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/autohotkey.js" afterPath="$PROJECT_DIR$/js/ace/snippets/autohotkey.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/batchfile.js" afterPath="$PROJECT_DIR$/js/ace/snippets/batchfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/c9search.js" afterPath="$PROJECT_DIR$/js/ace/snippets/c9search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/c_cpp.js" afterPath="$PROJECT_DIR$/js/ace/snippets/c_cpp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/cirru.js" afterPath="$PROJECT_DIR$/js/ace/snippets/cirru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/clojure.js" afterPath="$PROJECT_DIR$/js/ace/snippets/clojure.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/cobol.js" afterPath="$PROJECT_DIR$/js/ace/snippets/cobol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/coffee.js" afterPath="$PROJECT_DIR$/js/ace/snippets/coffee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/coldfusion.js" afterPath="$PROJECT_DIR$/js/ace/snippets/coldfusion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/csharp.js" afterPath="$PROJECT_DIR$/js/ace/snippets/csharp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/css.js" afterPath="$PROJECT_DIR$/js/ace/snippets/css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/curly.js" afterPath="$PROJECT_DIR$/js/ace/snippets/curly.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/d.js" afterPath="$PROJECT_DIR$/js/ace/snippets/d.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/dart.js" afterPath="$PROJECT_DIR$/js/ace/snippets/dart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/diff.js" afterPath="$PROJECT_DIR$/js/ace/snippets/diff.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/django.js" afterPath="$PROJECT_DIR$/js/ace/snippets/django.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/dockerfile.js" afterPath="$PROJECT_DIR$/js/ace/snippets/dockerfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/dot.js" afterPath="$PROJECT_DIR$/js/ace/snippets/dot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/eiffel.js" afterPath="$PROJECT_DIR$/js/ace/snippets/eiffel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/ejs.js" afterPath="$PROJECT_DIR$/js/ace/snippets/ejs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/elixir.js" afterPath="$PROJECT_DIR$/js/ace/snippets/elixir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/elm.js" afterPath="$PROJECT_DIR$/js/ace/snippets/elm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/erlang.js" afterPath="$PROJECT_DIR$/js/ace/snippets/erlang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-beautify.js" afterPath="$PROJECT_DIR$/js/ace/ext-beautify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-chromevox.js" afterPath="$PROJECT_DIR$/js/ace/ext-chromevox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-elastic_tabstops_lite.js" afterPath="$PROJECT_DIR$/js/ace/ext-elastic_tabstops_lite.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-emmet.js" afterPath="$PROJECT_DIR$/js/ace/ext-emmet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-error_marker.js" afterPath="$PROJECT_DIR$/js/ace/ext-error_marker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-keybinding_menu.js" afterPath="$PROJECT_DIR$/js/ace/ext-keybinding_menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-language_tools.js" afterPath="$PROJECT_DIR$/js/ace/ext-language_tools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-linking.js" afterPath="$PROJECT_DIR$/js/ace/ext-linking.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-modelist.js" afterPath="$PROJECT_DIR$/js/ace/ext-modelist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-old_ie.js" afterPath="$PROJECT_DIR$/js/ace/ext-old_ie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-searchbox.js" afterPath="$PROJECT_DIR$/js/ace/ext-searchbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-settings_menu.js" afterPath="$PROJECT_DIR$/js/ace/ext-settings_menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-spellcheck.js" afterPath="$PROJECT_DIR$/js/ace/ext-spellcheck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-split.js" afterPath="$PROJECT_DIR$/js/ace/ext-split.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-static_highlight.js" afterPath="$PROJECT_DIR$/js/ace/ext-static_highlight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-statusbar.js" afterPath="$PROJECT_DIR$/js/ace/ext-statusbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-textarea.js" afterPath="$PROJECT_DIR$/js/ace/ext-textarea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-themelist.js" afterPath="$PROJECT_DIR$/js/ace/ext-themelist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/ext-whitespace.js" afterPath="$PROJECT_DIR$/js/ace/ext-whitespace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/forth.js" afterPath="$PROJECT_DIR$/js/ace/snippets/forth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/ftl.js" afterPath="$PROJECT_DIR$/js/ace/snippets/ftl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/gcode.js" afterPath="$PROJECT_DIR$/js/ace/snippets/gcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/gherkin.js" afterPath="$PROJECT_DIR$/js/ace/snippets/gherkin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/gitignore.js" afterPath="$PROJECT_DIR$/js/ace/snippets/gitignore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/glsl.js" afterPath="$PROJECT_DIR$/js/ace/snippets/glsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/golang.js" afterPath="$PROJECT_DIR$/js/ace/snippets/golang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/groovy.js" afterPath="$PROJECT_DIR$/js/ace/snippets/groovy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/haml.js" afterPath="$PROJECT_DIR$/js/ace/snippets/haml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/handlebars.js" afterPath="$PROJECT_DIR$/js/ace/snippets/handlebars.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/haskell.js" afterPath="$PROJECT_DIR$/js/ace/snippets/haskell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/haxe.js" afterPath="$PROJECT_DIR$/js/ace/snippets/haxe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/html.js" afterPath="$PROJECT_DIR$/js/ace/snippets/html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/html_ruby.js" afterPath="$PROJECT_DIR$/js/ace/snippets/html_ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ie-emulation-modes-warning.js" afterPath="$PROJECT_DIR$/js/ie-emulation-modes-warning.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ie10-viewport-bug-workaround.js" afterPath="$PROJECT_DIR$/js/ie10-viewport-bug-workaround.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ie8-responsive-file-warning.js" afterPath="$PROJECT_DIR$/js/ie8-responsive-file-warning.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/ini.js" afterPath="$PROJECT_DIR$/js/ace/snippets/ini.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/io.js" afterPath="$PROJECT_DIR$/js/ace/snippets/io.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/jack.js" afterPath="$PROJECT_DIR$/js/ace/snippets/jack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/jade.js" afterPath="$PROJECT_DIR$/js/ace/snippets/jade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/java.js" afterPath="$PROJECT_DIR$/js/ace/snippets/java.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/javascript.js" afterPath="$PROJECT_DIR$/js/ace/snippets/javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-2.1.3.js" afterPath="$PROJECT_DIR$/js/jquery-2.1.3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-2.1.3.min.js" afterPath="$PROJECT_DIR$/js/jquery-2.1.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/json.js" afterPath="$PROJECT_DIR$/js/ace/snippets/json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/jsoniq.js" afterPath="$PROJECT_DIR$/js/ace/snippets/jsoniq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/jsp.js" afterPath="$PROJECT_DIR$/js/ace/snippets/jsp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/jsx.js" afterPath="$PROJECT_DIR$/js/ace/snippets/jsx.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/julia.js" afterPath="$PROJECT_DIR$/js/ace/snippets/julia.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/keybinding-emacs.js" afterPath="$PROJECT_DIR$/js/ace/keybinding-emacs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/keybinding-vim.js" afterPath="$PROJECT_DIR$/js/ace/keybinding-vim.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/latex.js" afterPath="$PROJECT_DIR$/js/ace/snippets/latex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/lean.js" afterPath="$PROJECT_DIR$/js/ace/snippets/lean.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/less.js" afterPath="$PROJECT_DIR$/js/ace/snippets/less.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/liquid.js" afterPath="$PROJECT_DIR$/js/ace/snippets/liquid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/lisp.js" afterPath="$PROJECT_DIR$/js/ace/snippets/lisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/live_script.js" afterPath="$PROJECT_DIR$/js/ace/snippets/live_script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/livescript.js" afterPath="$PROJECT_DIR$/js/ace/snippets/livescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/logiql.js" afterPath="$PROJECT_DIR$/js/ace/snippets/logiql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/lsl.js" afterPath="$PROJECT_DIR$/js/ace/snippets/lsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/lua.js" afterPath="$PROJECT_DIR$/js/ace/snippets/lua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/luapage.js" afterPath="$PROJECT_DIR$/js/ace/snippets/luapage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/lucene.js" afterPath="$PROJECT_DIR$/js/ace/snippets/lucene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/makefile.js" afterPath="$PROJECT_DIR$/js/ace/snippets/makefile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/markdown.js" afterPath="$PROJECT_DIR$/js/ace/snippets/markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/mask.js" afterPath="$PROJECT_DIR$/js/ace/snippets/mask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/matlab.js" afterPath="$PROJECT_DIR$/js/ace/snippets/matlab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/mel.js" afterPath="$PROJECT_DIR$/js/ace/snippets/mel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/mips_assembler.js" afterPath="$PROJECT_DIR$/js/ace/snippets/mips_assembler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/mipsassembler.js" afterPath="$PROJECT_DIR$/js/ace/snippets/mipsassembler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-abap.js" afterPath="$PROJECT_DIR$/js/ace/mode-abap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-abc.js" afterPath="$PROJECT_DIR$/js/ace/mode-abc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-actionscript.js" afterPath="$PROJECT_DIR$/js/ace/mode-actionscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-ada.js" afterPath="$PROJECT_DIR$/js/ace/mode-ada.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-apache_conf.js" afterPath="$PROJECT_DIR$/js/ace/mode-apache_conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-applescript.js" afterPath="$PROJECT_DIR$/js/ace/mode-applescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-asciidoc.js" afterPath="$PROJECT_DIR$/js/ace/mode-asciidoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-assembly_x86.js" afterPath="$PROJECT_DIR$/js/ace/mode-assembly_x86.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-autohotkey.js" afterPath="$PROJECT_DIR$/js/ace/mode-autohotkey.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-batchfile.js" afterPath="$PROJECT_DIR$/js/ace/mode-batchfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-c9search.js" afterPath="$PROJECT_DIR$/js/ace/mode-c9search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-c_cpp.js" afterPath="$PROJECT_DIR$/js/ace/mode-c_cpp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-cirru.js" afterPath="$PROJECT_DIR$/js/ace/mode-cirru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-clojure.js" afterPath="$PROJECT_DIR$/js/ace/mode-clojure.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-cobol.js" afterPath="$PROJECT_DIR$/js/ace/mode-cobol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-coffee.js" afterPath="$PROJECT_DIR$/js/ace/mode-coffee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-coldfusion.js" afterPath="$PROJECT_DIR$/js/ace/mode-coldfusion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-csharp.js" afterPath="$PROJECT_DIR$/js/ace/mode-csharp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-css.js" afterPath="$PROJECT_DIR$/js/ace/mode-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-curly.js" afterPath="$PROJECT_DIR$/js/ace/mode-curly.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-d.js" afterPath="$PROJECT_DIR$/js/ace/mode-d.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-dart.js" afterPath="$PROJECT_DIR$/js/ace/mode-dart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-diff.js" afterPath="$PROJECT_DIR$/js/ace/mode-diff.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-django.js" afterPath="$PROJECT_DIR$/js/ace/mode-django.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-dockerfile.js" afterPath="$PROJECT_DIR$/js/ace/mode-dockerfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-dot.js" afterPath="$PROJECT_DIR$/js/ace/mode-dot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-eiffel.js" afterPath="$PROJECT_DIR$/js/ace/mode-eiffel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-ejs.js" afterPath="$PROJECT_DIR$/js/ace/mode-ejs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-elixir.js" afterPath="$PROJECT_DIR$/js/ace/mode-elixir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-elm.js" afterPath="$PROJECT_DIR$/js/ace/mode-elm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-erlang.js" afterPath="$PROJECT_DIR$/js/ace/mode-erlang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-forth.js" afterPath="$PROJECT_DIR$/js/ace/mode-forth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-ftl.js" afterPath="$PROJECT_DIR$/js/ace/mode-ftl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-gcode.js" afterPath="$PROJECT_DIR$/js/ace/mode-gcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-gherkin.js" afterPath="$PROJECT_DIR$/js/ace/mode-gherkin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-gitignore.js" afterPath="$PROJECT_DIR$/js/ace/mode-gitignore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-glsl.js" afterPath="$PROJECT_DIR$/js/ace/mode-glsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-golang.js" afterPath="$PROJECT_DIR$/js/ace/mode-golang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-groovy.js" afterPath="$PROJECT_DIR$/js/ace/mode-groovy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-haml.js" afterPath="$PROJECT_DIR$/js/ace/mode-haml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-handlebars.js" afterPath="$PROJECT_DIR$/js/ace/mode-handlebars.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-haskell.js" afterPath="$PROJECT_DIR$/js/ace/mode-haskell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-haxe.js" afterPath="$PROJECT_DIR$/js/ace/mode-haxe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-html.js" afterPath="$PROJECT_DIR$/js/ace/mode-html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-html_ruby.js" afterPath="$PROJECT_DIR$/js/ace/mode-html_ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-ini.js" afterPath="$PROJECT_DIR$/js/ace/mode-ini.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-io.js" afterPath="$PROJECT_DIR$/js/ace/mode-io.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-jack.js" afterPath="$PROJECT_DIR$/js/ace/mode-jack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-jade.js" afterPath="$PROJECT_DIR$/js/ace/mode-jade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-java.js" afterPath="$PROJECT_DIR$/js/ace/mode-java.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-javascript.js" afterPath="$PROJECT_DIR$/js/ace/mode-javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-json.js" afterPath="$PROJECT_DIR$/js/ace/mode-json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-jsoniq.js" afterPath="$PROJECT_DIR$/js/ace/mode-jsoniq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-jsp.js" afterPath="$PROJECT_DIR$/js/ace/mode-jsp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-jsx.js" afterPath="$PROJECT_DIR$/js/ace/mode-jsx.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-julia.js" afterPath="$PROJECT_DIR$/js/ace/mode-julia.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-latex.js" afterPath="$PROJECT_DIR$/js/ace/mode-latex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-lean.js" afterPath="$PROJECT_DIR$/js/ace/mode-lean.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-less.js" afterPath="$PROJECT_DIR$/js/ace/mode-less.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-liquid.js" afterPath="$PROJECT_DIR$/js/ace/mode-liquid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-lisp.js" afterPath="$PROJECT_DIR$/js/ace/mode-lisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-live_script.js" afterPath="$PROJECT_DIR$/js/ace/mode-live_script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-livescript.js" afterPath="$PROJECT_DIR$/js/ace/mode-livescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-logiql.js" afterPath="$PROJECT_DIR$/js/ace/mode-logiql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-lsl.js" afterPath="$PROJECT_DIR$/js/ace/mode-lsl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-lua.js" afterPath="$PROJECT_DIR$/js/ace/mode-lua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-luapage.js" afterPath="$PROJECT_DIR$/js/ace/mode-luapage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-lucene.js" afterPath="$PROJECT_DIR$/js/ace/mode-lucene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-makefile.js" afterPath="$PROJECT_DIR$/js/ace/mode-makefile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-markdown.js" afterPath="$PROJECT_DIR$/js/ace/mode-markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-mask.js" afterPath="$PROJECT_DIR$/js/ace/mode-mask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-matlab.js" afterPath="$PROJECT_DIR$/js/ace/mode-matlab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-mel.js" afterPath="$PROJECT_DIR$/js/ace/mode-mel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-mips_assembler.js" afterPath="$PROJECT_DIR$/js/ace/mode-mips_assembler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-mipsassembler.js" afterPath="$PROJECT_DIR$/js/ace/mode-mipsassembler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-mushcode.js" afterPath="$PROJECT_DIR$/js/ace/mode-mushcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-mysql.js" afterPath="$PROJECT_DIR$/js/ace/mode-mysql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-nix.js" afterPath="$PROJECT_DIR$/js/ace/mode-nix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-objectivec.js" afterPath="$PROJECT_DIR$/js/ace/mode-objectivec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-ocaml.js" afterPath="$PROJECT_DIR$/js/ace/mode-ocaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-pascal.js" afterPath="$PROJECT_DIR$/js/ace/mode-pascal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-perl.js" afterPath="$PROJECT_DIR$/js/ace/mode-perl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-pgsql.js" afterPath="$PROJECT_DIR$/js/ace/mode-pgsql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-php.js" afterPath="$PROJECT_DIR$/js/ace/mode-php.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-plain_text.js" afterPath="$PROJECT_DIR$/js/ace/mode-plain_text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-powershell.js" afterPath="$PROJECT_DIR$/js/ace/mode-powershell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-praat.js" afterPath="$PROJECT_DIR$/js/ace/mode-praat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-prolog.js" afterPath="$PROJECT_DIR$/js/ace/mode-prolog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-properties.js" afterPath="$PROJECT_DIR$/js/ace/mode-properties.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-protobuf.js" afterPath="$PROJECT_DIR$/js/ace/mode-protobuf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-python.js" afterPath="$PROJECT_DIR$/js/ace/mode-python.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-r.js" afterPath="$PROJECT_DIR$/js/ace/mode-r.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-rdoc.js" afterPath="$PROJECT_DIR$/js/ace/mode-rdoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-rhtml.js" afterPath="$PROJECT_DIR$/js/ace/mode-rhtml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-ruby.js" afterPath="$PROJECT_DIR$/js/ace/mode-ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-rust.js" afterPath="$PROJECT_DIR$/js/ace/mode-rust.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-sass.js" afterPath="$PROJECT_DIR$/js/ace/mode-sass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-scad.js" afterPath="$PROJECT_DIR$/js/ace/mode-scad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-scala.js" afterPath="$PROJECT_DIR$/js/ace/mode-scala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-scheme.js" afterPath="$PROJECT_DIR$/js/ace/mode-scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-scss.js" afterPath="$PROJECT_DIR$/js/ace/mode-scss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-sh.js" afterPath="$PROJECT_DIR$/js/ace/mode-sh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-sjs.js" afterPath="$PROJECT_DIR$/js/ace/mode-sjs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-smarty.js" afterPath="$PROJECT_DIR$/js/ace/mode-smarty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-snippets.js" afterPath="$PROJECT_DIR$/js/ace/mode-snippets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-soy_template.js" afterPath="$PROJECT_DIR$/js/ace/mode-soy_template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-space.js" afterPath="$PROJECT_DIR$/js/ace/mode-space.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-sql.js" afterPath="$PROJECT_DIR$/js/ace/mode-sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-stylus.js" afterPath="$PROJECT_DIR$/js/ace/mode-stylus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-svg.js" afterPath="$PROJECT_DIR$/js/ace/mode-svg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-tcl.js" afterPath="$PROJECT_DIR$/js/ace/mode-tcl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-tex.js" afterPath="$PROJECT_DIR$/js/ace/mode-tex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-textile.js" afterPath="$PROJECT_DIR$/js/ace/mode-textile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-toml.js" afterPath="$PROJECT_DIR$/js/ace/mode-toml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-twig.js" afterPath="$PROJECT_DIR$/js/ace/mode-twig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-typescript.js" afterPath="$PROJECT_DIR$/js/ace/mode-typescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-vala.js" afterPath="$PROJECT_DIR$/js/ace/mode-vala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-vbscript.js" afterPath="$PROJECT_DIR$/js/ace/mode-vbscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-velocity.js" afterPath="$PROJECT_DIR$/js/ace/mode-velocity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-verilog.js" afterPath="$PROJECT_DIR$/js/ace/mode-verilog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-vhdl.js" afterPath="$PROJECT_DIR$/js/ace/mode-vhdl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-xml.js" afterPath="$PROJECT_DIR$/js/ace/mode-xml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-xquery.js" afterPath="$PROJECT_DIR$/js/ace/mode-xquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/mode-yaml.js" afterPath="$PROJECT_DIR$/js/ace/mode-yaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/mushcode.js" afterPath="$PROJECT_DIR$/js/ace/snippets/mushcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/mysql.js" afterPath="$PROJECT_DIR$/js/ace/snippets/mysql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/nix.js" afterPath="$PROJECT_DIR$/js/ace/snippets/nix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/objectivec.js" afterPath="$PROJECT_DIR$/js/ace/snippets/objectivec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/ocaml.js" afterPath="$PROJECT_DIR$/js/ace/snippets/ocaml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/pascal.js" afterPath="$PROJECT_DIR$/js/ace/snippets/pascal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/perl.js" afterPath="$PROJECT_DIR$/js/ace/snippets/perl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/pgsql.js" afterPath="$PROJECT_DIR$/js/ace/snippets/pgsql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/php.js" afterPath="$PROJECT_DIR$/js/ace/snippets/php.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/plain_text.js" afterPath="$PROJECT_DIR$/js/ace/snippets/plain_text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/powershell.js" afterPath="$PROJECT_DIR$/js/ace/snippets/powershell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/praat.js" afterPath="$PROJECT_DIR$/js/ace/snippets/praat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problems.html" afterPath="$PROJECT_DIR$/problems.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/prolog.js" afterPath="$PROJECT_DIR$/js/ace/snippets/prolog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/properties.js" afterPath="$PROJECT_DIR$/js/ace/snippets/properties.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/protobuf.js" afterPath="$PROJECT_DIR$/js/ace/snippets/protobuf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/python.js" afterPath="$PROJECT_DIR$/js/ace/snippets/python.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/r.js" afterPath="$PROJECT_DIR$/js/ace/snippets/r.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/rdoc.js" afterPath="$PROJECT_DIR$/js/ace/snippets/rdoc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/rhtml.js" afterPath="$PROJECT_DIR$/js/ace/snippets/rhtml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/ruby.js" afterPath="$PROJECT_DIR$/js/ace/snippets/ruby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/rust.js" afterPath="$PROJECT_DIR$/js/ace/snippets/rust.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/sass.js" afterPath="$PROJECT_DIR$/js/ace/snippets/sass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/scad.js" afterPath="$PROJECT_DIR$/js/ace/snippets/scad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/scala.js" afterPath="$PROJECT_DIR$/js/ace/snippets/scala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/scheme.js" afterPath="$PROJECT_DIR$/js/ace/snippets/scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/scss.js" afterPath="$PROJECT_DIR$/js/ace/snippets/scss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/sh.js" afterPath="$PROJECT_DIR$/js/ace/snippets/sh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/sjs.js" afterPath="$PROJECT_DIR$/js/ace/snippets/sjs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/smarty.js" afterPath="$PROJECT_DIR$/js/ace/snippets/smarty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/snippets.js" afterPath="$PROJECT_DIR$/js/ace/snippets/snippets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/soy_template.js" afterPath="$PROJECT_DIR$/js/ace/snippets/soy_template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/space.js" afterPath="$PROJECT_DIR$/js/ace/snippets/space.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/sql.js" afterPath="$PROJECT_DIR$/js/ace/snippets/sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/stylus.js" afterPath="$PROJECT_DIR$/js/ace/snippets/stylus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/svg.js" afterPath="$PROJECT_DIR$/js/ace/snippets/svg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/tcl.js" afterPath="$PROJECT_DIR$/js/ace/snippets/tcl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/tex.js" afterPath="$PROJECT_DIR$/js/ace/snippets/tex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/text.js" afterPath="$PROJECT_DIR$/js/ace/snippets/text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/textile.js" afterPath="$PROJECT_DIR$/js/ace/snippets/textile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-ambiance.js" afterPath="$PROJECT_DIR$/js/ace/theme-ambiance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-chaos.js" afterPath="$PROJECT_DIR$/js/ace/theme-chaos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-chrome.js" afterPath="$PROJECT_DIR$/js/ace/theme-chrome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-clouds.js" afterPath="$PROJECT_DIR$/js/ace/theme-clouds.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-clouds_midnight.js" afterPath="$PROJECT_DIR$/js/ace/theme-clouds_midnight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-cobalt.js" afterPath="$PROJECT_DIR$/js/ace/theme-cobalt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-crimson_editor.js" afterPath="$PROJECT_DIR$/js/ace/theme-crimson_editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-dawn.js" afterPath="$PROJECT_DIR$/js/ace/theme-dawn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-dreamweaver.js" afterPath="$PROJECT_DIR$/js/ace/theme-dreamweaver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-eclipse.js" afterPath="$PROJECT_DIR$/js/ace/theme-eclipse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-github.js" afterPath="$PROJECT_DIR$/js/ace/theme-github.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-idle_fingers.js" afterPath="$PROJECT_DIR$/js/ace/theme-idle_fingers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-katzenmilch.js" afterPath="$PROJECT_DIR$/js/ace/theme-katzenmilch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-kr_theme.js" afterPath="$PROJECT_DIR$/js/ace/theme-kr_theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-kuroir.js" afterPath="$PROJECT_DIR$/js/ace/theme-kuroir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-merbivore.js" afterPath="$PROJECT_DIR$/js/ace/theme-merbivore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-merbivore_soft.js" afterPath="$PROJECT_DIR$/js/ace/theme-merbivore_soft.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-mono_industrial.js" afterPath="$PROJECT_DIR$/js/ace/theme-mono_industrial.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-monokai.js" afterPath="$PROJECT_DIR$/js/ace/theme-monokai.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-pastel_on_dark.js" afterPath="$PROJECT_DIR$/js/ace/theme-pastel_on_dark.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-solarized_dark.js" afterPath="$PROJECT_DIR$/js/ace/theme-solarized_dark.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-solarized_light.js" afterPath="$PROJECT_DIR$/js/ace/theme-solarized_light.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-terminal.js" afterPath="$PROJECT_DIR$/js/ace/theme-terminal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-textmate.js" afterPath="$PROJECT_DIR$/js/ace/theme-textmate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-tomorrow.js" afterPath="$PROJECT_DIR$/js/ace/theme-tomorrow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-tomorrow_night.js" afterPath="$PROJECT_DIR$/js/ace/theme-tomorrow_night.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-tomorrow_night_blue.js" afterPath="$PROJECT_DIR$/js/ace/theme-tomorrow_night_blue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-tomorrow_night_bright.js" afterPath="$PROJECT_DIR$/js/ace/theme-tomorrow_night_bright.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-tomorrow_night_eighties.js" afterPath="$PROJECT_DIR$/js/ace/theme-tomorrow_night_eighties.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-twilight.js" afterPath="$PROJECT_DIR$/js/ace/theme-twilight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-vibrant_ink.js" afterPath="$PROJECT_DIR$/js/ace/theme-vibrant_ink.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/theme-xcode.js" afterPath="$PROJECT_DIR$/js/ace/theme-xcode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/toml.js" afterPath="$PROJECT_DIR$/js/ace/snippets/toml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/twig.js" afterPath="$PROJECT_DIR$/js/ace/snippets/twig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/typescript.js" afterPath="$PROJECT_DIR$/js/ace/snippets/typescript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/vala.js" afterPath="$PROJECT_DIR$/js/ace/snippets/vala.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/vbscript.js" afterPath="$PROJECT_DIR$/js/ace/snippets/vbscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/velocity.js" afterPath="$PROJECT_DIR$/js/ace/snippets/velocity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/verilog.js" afterPath="$PROJECT_DIR$/js/ace/snippets/verilog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/vhdl.js" afterPath="$PROJECT_DIR$/js/ace/snippets/vhdl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-coffee.js" afterPath="$PROJECT_DIR$/js/ace/worker-coffee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-css.js" afterPath="$PROJECT_DIR$/js/ace/worker-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-html.js" afterPath="$PROJECT_DIR$/js/ace/worker-html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-javascript.js" afterPath="$PROJECT_DIR$/js/ace/worker-javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-json.js" afterPath="$PROJECT_DIR$/js/ace/worker-json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-lua.js" afterPath="$PROJECT_DIR$/js/ace/worker-lua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-php.js" afterPath="$PROJECT_DIR$/js/ace/worker-php.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/worker-xml.js" afterPath="$PROJECT_DIR$/js/ace/worker-xml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/xml.js" afterPath="$PROJECT_DIR$/js/ace/snippets/xml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/xquery.js" afterPath="$PROJECT_DIR$/js/ace/snippets/xquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ace/snippets/yaml.js" afterPath="$PROJECT_DIR$/js/ace/snippets/yaml.js" />
+    </list>
+    <ignored path="Website.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Website" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.72039473" vertical-offset="106" max-vertical-offset="2312">
+              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="problems.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/problems.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.269231" vertical-offset="1925" max-vertical-offset="2584">
+              <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.6923075" vertical-offset="1534" max-vertical-offset="2448">
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/1.html" />
+        <option value="$PROJECT_DIR$/problems.html" />
+        <option value="$PROJECT_DIR$/blank.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
+    <property name="PluginDummyText.Genre" value="scifi" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\deniz\Documents\GitHub\ProjectC\Website" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ec97603-bdb1-4b4c-94bf-b3d79734cf78" name="Default" comment="" />
+      <created>1430568356338</created>
+      <option name="number" value="Default" />
+      <updated>1430568356338</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24304539" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/problems.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.269231" vertical-offset="1925" max-vertical-offset="2584">
+          <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6923075" vertical-offset="1534" max-vertical-offset="2448">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72039473" vertical-offset="106" max-vertical-offset="2312">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
