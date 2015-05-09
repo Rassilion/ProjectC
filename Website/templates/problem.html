@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}Problem 1{% endblock %}
+{% block content %}
+<div class="container main" role="main">
+
+    <div class="row"><div class="col-md-9">
+        <div class="page-header">
+        <h2>Mükemel sayılar <span class="badge">112</span> <span class="label label-success">Çözüldü</span>
+            <span class="label label-danger">Hatalı</span></h2>
+    </div>
+        <p>Kendi hariç bütün sayıları....</p>
+
+        <p>Girdi: asdsadsad</p>
+
+        <p>Çıktı: asdsadsa</p>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Örnek Girdi</h3>
+            </div>
+            <div class="panel-body">
+                28
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Örnek Çıktı</h3>
+            </div>
+            <div class="panel-body">
+                EVET
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Editör</h3>
+            </div>
+            <div class="panel-body" id="editor">
+                kod
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-3 well">Confucius says: intuition, tantra and travel.When one develops uniqueness and joy, one is able to discover awareness.</div>
+    </div>
+
+     {{ footer() }}
+</div>
+<!-- /container -->
+{% endblock %}
