@@ -6,31 +6,10 @@
 
     <div class="row"><div class="col-md-9">
         <div class="page-header">
-        <h2>Mükemel sayılar <span class="badge">112</span> <span class="label label-success">Çözüldü</span>
+        <h2>{{ problem.title }} <span class="badge">{{ problem.count }}</span> <span class="label label-success">Çözüldü</span>
             <span class="label label-danger">Hatalı</span></h2>
     </div>
-        <p>Kendi hariç bütün sayıları....</p>
-
-        <p>Girdi: asdsadsad</p>
-
-        <p>Çıktı: asdsadsa</p>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Örnek Girdi</h3>
-            </div>
-            <div class="panel-body">
-                28
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Örnek Çıktı</h3>
-            </div>
-            <div class="panel-body">
-                EVET
-            </div>
-        </div>
+{{ problem.body|safe }}
 
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -48,4 +27,12 @@
      {{ footer() }}
 </div>
 <!-- /container -->
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for('static', filename='js/ace/ace.js') }}" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/ambience");
+    editor.getSession().setMode("ace/mode/c_cpp");
+</script>
 {% endblock %}

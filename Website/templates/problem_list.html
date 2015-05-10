@@ -26,34 +26,15 @@
             <th>Zorluk</th>
         </tr>
         </thead>
+        {% for problem in problems %}
         <tr>
-            <td><a href="1.html">1</a></td>
-            <td><a href="1.html">Mükemmel sayı</a></td>
-            <td>Basic Operations, Loops, Conditionals</td>
-            <td>112</td>
-            <td>Z1</td>
+            <td>{{ problem.id }}</td>
+            <td><a href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
+            <td>{{ problem.related }}</td>
+            <td>{{ problem.count }}</td>
+            <td>{{ problem.dificulty }}</td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td>Mükemmel sayı</td>
-            <td>Basic Operations, Loops, Conditionals</td>
-            <td>112</td>
-            <td>Z1</td>
-        </tr>
-        <tr class="danger">
-            <td>3</td>
-            <td>Mükemmel sayı</td>
-            <td>Basic Operations, Loops, Conditionals</td>
-            <td>112</td>
-            <td>Z1</td>
-        </tr>
-        <tr class="success">
-            <td>4</td>
-            <td>Mükemmel sayı</td>
-            <td>Basic Operations, Loops, Conditionals</td>
-            <td>112</td>
-            <td>Z1</td>
-        </tr>
+        {% endfor %}
     </table>
     <ul class="pager">
         <li><a href="#">Previous</a></li>
