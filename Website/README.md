@@ -5,6 +5,10 @@ Link: http://107.191.111.139/
 
 # ChangeLog
 
+### 0.1.0
+- Flask module yapısı eklendi
+- Database eklendi
+
 ### 0.0.2
 - Python unicode_literals import edildi (etkileri kontrol edilecek)
 - View fonksiyonlarına deneme amaçlı liste bilgiler eklendi
