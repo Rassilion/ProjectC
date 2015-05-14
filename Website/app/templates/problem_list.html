@@ -5,14 +5,14 @@
 <div class="container main" role="main">
 
     <div class="row">
-        <div class="col-md-4"><input type="text" class="form-control" placeholder="Ara"></div>
-        <div class="col-md-4"><select class="form-control">
+        <div class="col-sm-4"><input type="text" class="form-control" placeholder="Ara"></div>
+        <div class="col-sm-4"><select class="form-control">
             <option>ID</option>
             <option>isim</option>
             <option>konular</option>
             <option>zorluk</option>
         </select></div>
-        <div class="col-md-4"><label class="checkbox-inline">
+        <div class="col-sm-4"><label class="checkbox-inline">
             <input type="checkbox" id="inlineCheckbox1" value="option1"> Çözülmüş soruları gösterme
         </label></div>
     </div>
@@ -37,9 +37,13 @@
         {% endfor %}
     </table>
     <ul class="pager">
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
-    </ul>
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
 
     {{ footer() }}
 </div>
