@@ -1,18 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container main" role="main">
+    <div class="container main" role="main">
 
-    <div class="row"><div class="col-sm-12 ">
+        <div class="row">
+            <div class="col-sm-12 ">
 
-        {% for post in news %}
+                {% for post in news %}
 
-        <h2>{{ post.title }}</h2>
-{{ post.body|safe}}
-            <p><a class="btn btn-default" href="{{ url_for('news', slug=post.slug) }}" role="button">Devamı &raquo;</a></p>
-        <hr>
-        {% endfor %}
-        <!-- Pager -->
+                    <h2>{{ post.title }}</h2>
+                    {{ post.body|safe }}
+                    <p><a class="btn btn-default" href="{{ url_for('news', slug=post.slug) }}"
+                          role="button">Devamı &raquo;</a></p>
+                    <hr>
+                {% endfor %}
+                <!-- Pager -->
                 <ul class="pager">
                     <li class="previous">
                         <a href="#">&larr; Older</a>
@@ -21,13 +23,14 @@
                         <a href="#">Newer &rarr;</a>
                     </li>
                 </ul>
+            </div>
+            <!--
+            <div class="col-md-4 well">
+                <p>Salty, real clouds begrudgingly break a weird, cloudy tobacco.Always extraordinarilly develop the imminent yogi.Try boiling nachos kebab enameled with crême fraîche.Harmless suns, to the space station.</p>
+            </div>-->
+        </div>
+
+        {{ footer() }}
+
     </div>
-    <!--
-    <div class="col-md-4 well">
-        <p>Salty, real clouds begrudgingly break a weird, cloudy tobacco.Always extraordinarilly develop the imminent yogi.Try boiling nachos kebab enameled with crême fraîche.Harmless suns, to the space station.</p>
-    </div>--></div>
-
-    {{ footer() }}
-
-</div>
 {% endblock %}

@@ -5,13 +5,12 @@ import datetime
 from slugify import slugify
 
 
-
 class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
     body = db.Column(db.String, unique=True)
-    timestamp = db.Column(db.DateTime, default = datetime.datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __init__(self, title=None, body=None):
         self.title = title
@@ -31,7 +30,7 @@ class Problems(db.Model):
     count = db.Column(db.Integer, unique=False)
     related = db.Column(db.String(64), unique=False)  # baska bir tabloya relation ver
     difficulty = db.Column(db.String(64), unique=False)
-    timestamp = db.Column(db.DateTime,default = datetime.datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __init__(self, title=None, body=None, count=None, related=None, difficulty=None):
         self.title = title
@@ -52,7 +51,7 @@ class Users(db.Model):
     lastname = db.Column(db.String(20))
     password = db.Column(db.String)
     email = db.Column(db.String(100), unique=True)
-    time_registered = db.Column(db.DateTime,default = datetime.datetime.utcnow)
+    time_registered = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     bio = db.Column(db.Text)
     avatar = db.Column(db.String(255))
 
