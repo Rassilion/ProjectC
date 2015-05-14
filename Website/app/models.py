@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from app import db
-
+from flask.ext.security import UserMixin, RoleMixin
 import datetime
 from slugify import slugify
 
 
 class News(db.Model):
+    __tablename__ = 'news'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
@@ -23,6 +24,7 @@ class News(db.Model):
 
 
 class Problems(db.Model):
+    __tablename__ = 'problems'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
@@ -44,27 +46,28 @@ class Problems(db.Model):
         return '<Problems %r>' % (self.title)
 
 
-class Users(db.Model):
+roles_users = db.Table(
+    'roles_users',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer, db.ForeignKey('role.id')))
+
+
+class Role(db.Model, RoleMixin):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(60), unique=True)
-    firstname = db.Column(db.String(20))
-    lastname = db.Column(db.String(20))
+    name = db.Column(db.String, unique=True)
+    description = db.Column(db.String)
+
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
-    email = db.Column(db.String(100), unique=True)
+    username = db.Column(db.String(60), unique=True)
     time_registered = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     bio = db.Column(db.Text)
     avatar = db.Column(db.String(255))
+    active = db.Column(db.Boolean)
+    roles = db.relationship(
+        'Role', secondary=roles_users,
+        backref=db.backref('users', lazy='dynamic'))
 
-    def __init__(self, username=None, password=None,
-                 email=None, firstname=None, lastname=None, bio=None, avatar=None):
-        self.username = username
-        self.email = email
-        self.firstname = firstname
-        self.lastname = lastname
-        self.password = password
-        self.bio = bio
-        self.avatar = avatar
-
-
-    def __repr__(self):
-        return '<User %r>' % (self.username)

@@ -218,7 +218,7 @@ snippet test\n\
 		${2}\n\
 	}\n\
 ##\n\
-## Utils\n\
+## utils\n\
 snippet Sc\n\
 	Scanner\n\
 ##\n\
