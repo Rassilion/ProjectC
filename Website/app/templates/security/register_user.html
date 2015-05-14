@@ -19,6 +19,7 @@
                             </div>
 
                             {{ wtf.horizontal_field(register_user_form.email) }}
+                        {{ wtf.horizontal_field(register_user_form.username) }}
                             {{ wtf.horizontal_field(register_user_form.password) }}
                             {% if register_user_form.password_confirm %}
                                 {{ wtf.horizontal_field(register_user_form.password_confirm) }}

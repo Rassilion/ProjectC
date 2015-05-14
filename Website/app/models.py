@@ -16,7 +16,7 @@ class News(db.Model):
     def __init__(self, title=None, body=None):
         self.title = title
         self.body = body
-        self.slug = slugify(title)
+        self.slug = slugify(title) #hata kontrolu ekle
 
 
     def __repr__(self):

@@ -1,16 +1,19 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import time
+from forms import *
 from flask.ext.login import login_required
 from flask.ext.security import SQLAlchemyUserDatastore, Security
 from flask.ext.security.utils import encrypt_password
 from app import app, db
 from flask import request, g, render_template, redirect, url_for, session
-from forms import *
+
 from models import User, Role, News, Problems
 
+
+
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-security = Security(app, user_datastore)
+security = Security(app, user_datastore,register_form=ExtendedRegisterForm)
 
 
 @app.before_request
