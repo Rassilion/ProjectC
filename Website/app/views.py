@@ -17,19 +17,23 @@ def before_request():
 @app.route('/index')
 def index():
     news = models.News.query.all()
-    return render_template('index.html', news=news)
+    return render_template('index.html',title='Anasayfa', news=news)
 
+@app.route('/news/<slug>')
+def news(slug):
+    post = models.News.query.filter_by(slug=slug).first()
+    return render_template('news.html',title=post.title, post=post)
 
 @app.route('/problems')
 def problem_list():
     problems = models.Problems.query.all()
-    return render_template('problem_list.html', problems=problems)
+    return render_template('problem_list.html',title='Problem Listesi', problems=problems)
 
 
 @app.route('/problem/<slug>')
 def problem(slug):
     problem = models.Problems.query.filter_by(slug=slug).first()
-    return render_template('problem.html', problem=problem)
+    return render_template('problem.html',title=problem.title, problem=problem)
 
 
 
