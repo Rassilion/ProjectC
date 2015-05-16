@@ -1,14 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container main" role="main">
-
-    <div class="row"><div class="col-sm-12">
+    <div class="col-sm-12">
         <div class="page-header">
-        <h2>{{ problem.title }} <span class="badge">{{ problem.count }}</span> <span class="label label-success">Çözüldü</span>
-            <span class="label label-danger">Hatalı</span></h2>
-    </div>
-{{ problem.body|safe }}
+            <h2>{{ problem.title }} <span class="badge">{{ problem.count }}</span> <span class="label label-success">Çözüldü</span>
+                <span class="label label-danger">Hatalı</span></h2>
+        </div>
+        {{ problem.body|safe }}
 
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -20,20 +18,17 @@
 
         </div>
     </div>
-        <!--
-    <div class="col-md-3 well">Confucius says: intuition, tantra and travel.When one develops uniqueness and joy, one is able to discover awareness.</div>
-    -->
-    </div>
+    <!--
+<div class="col-md-3 well">Confucius says: intuition, tantra and travel.When one develops uniqueness and joy, one is able to discover awareness.</div>
+-->
 
-     {{ footer() }}
-</div>
-<!-- /container -->
+    <!-- /container -->
 {% endblock %}
 {% block js %}
     <script src="{{ url_for('static', filename='js/ace/ace.js') }}" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/ambience");
-    editor.getSession().setMode("ace/mode/c_cpp");
-</script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/ambience");
+        editor.getSession().setMode("ace/mode/c_cpp");
+    </script>
 {% endblock %}

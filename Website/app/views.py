@@ -10,10 +10,8 @@ from flask import request, g, render_template, redirect, url_for, session
 
 from models import User, Role, News, Problems
 
-
-
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-security = Security(app, user_datastore,register_form=ExtendedRegisterForm)
+security = Security(app, user_datastore, register_form=ExtendedRegisterForm)
 
 
 @app.before_request
@@ -50,6 +48,3 @@ def problem_list():
 def problem(slug):
     problem = Problems.query.filter_by(slug=slug).first()
     return render_template('problem.html', title=problem.title, problem=problem)
-
-
-

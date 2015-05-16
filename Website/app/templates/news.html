@@ -1,23 +1,19 @@
 {% extends "layout.html" %}
 
-{% block title %}Index{% endblock %}
 {% block content %}
-<div class="container main" role="main">
 
-    <div class="row"><div class="col-sm-12 ">
+
+
+    <div class="col-sm-12 ">
 
 
         <h2>{{ post.title }}</h2>
-{{ post.body|safe}}
+        {{ post.body|safe }}
         <hr>
 
     </div>
     <!--
     <div class="col-md-4 well">
         <p>Salty, real clouds begrudgingly break a weird, cloudy tobacco.Always extraordinarilly develop the imminent yogi.Try boiling nachos kebab enameled with crême fraîche.Harmless suns, to the space station.</p>
-    </div>--></div>
-
-    {{ footer() }}
-
-</div>
+    </div>-->
 {% endblock %}

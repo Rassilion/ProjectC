@@ -1,58 +1,52 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="container main" role="main">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10 well" style="background-color: #ffffff">
+
         <div class="row">
-            <div class="col-sm-1">
+            <div class="col-sm-2">
             </div>
-            <div class="col-sm-10 well" style="background-color: #ffffff">
+            <div class="col-sm-8">
+                <form class="form form-horizontal" action="{{ url_for_security('send_confirmation') }}"
+                      method="POST" name="send_confirmation_form">
+                    {{ send_confirmation_form.csrf_token }}
 
-                <div class="row">
-                    <div class="col-sm-2">
+                    {{ wtf.horizontal_field(send_confirmation_form.email) }}
+
+                    <div class="col-lg-offset-2">
+                        <input type="submit" value="Login" class="btn btn-primary"/>
                     </div>
-                    <div class="col-sm-8">
-                        <form class="form form-horizontal" action="{{ url_for_security('send_confirmation') }}"
-                              method="POST" name="send_confirmation_form">
-                            {{ send_confirmation_form.csrf_token }}
+                </form>
 
-                            {{ wtf.horizontal_field(send_confirmation_form.email) }}
+                <br/>
 
-                            <div class="col-lg-offset-2">
-                                <input type="submit" value="Login" class="btn btn-primary"/>
-                            </div>
-                        </form>
-
-                        <br/>
-
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                {% if security.registerable %}
-                                    Don't have an account yet?
-                                    <a href="{{ url_for_security('register') }}">Create a new account</a><br/>
-                                {% endif %}
-                                {% if security.recoverable %}
-                                    <a href="{{ url_for_security('forgot_password') }}">Forgot your password?</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {% if security.registerable %}
+                            Don't have an account yet?
+                            <a href="{{ url_for_security('register') }}">Create a new account</a><br/>
+                        {% endif %}
+                        {% if security.recoverable %}
+                            <a href="{{ url_for_security('forgot_password') }}">Forgot your password?</a>
+                        {% endif %}
                     </div>
                 </div>
-
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-2">
             </div>
-
-
-            <!--
-            <div class="col-md-4 well">
-                <p>Salty, real clouds begrudgingly break a weird, cloudy tobacco.Always extraordinarilly develop the imminent yogi.Try boiling nachos kebab enameled with crême fraîche.Harmless suns, to the space station.</p>
-            </div>-->
         </div>
 
-        {{ footer() }}
-
     </div>
+    <div class="col-sm-1">
+    </div>
+
+
+    <!--
+    <div class="col-md-4 well">
+        <p>Salty, real clouds begrudgingly break a weird, cloudy tobacco.Always extraordinarilly develop the imminent yogi.Try boiling nachos kebab enameled with crême fraîche.Harmless suns, to the space station.</p>
+    </div>-->
+
 {% endblock %}
 
