@@ -16,6 +16,5 @@ class Config():
     SECURITY_CONFIRMABLE = False
     SECURITY_RECOVERABLE = False
     SECURITY_TRACKABLE = False
-    #no mail serv
-    SECURITY_SEND_REGISTER_EMAIL=False
-
+    # no mail serv
+    SECURITY_SEND_REGISTER_EMAIL = False

@@ -3,10 +3,8 @@
 from app import db
 from app import models
 
-
 db.drop_all()
 db.create_all()
-
 
 u = [models.News(title=u'Duyuru 1',
                  body=u'<p>One must discover the sun in order to shape the doer of honorable mineral. Trust happens when you trap music so substantially that whatsoever you are easing is your pain. One must gain the lama in order to facilitate the cow of secret heaven. One must hurt the explosion of the anger in order to love the spirit of unconditional career. When the follower of resurrection knows the tantras of the lama, the politics will know power.<//p>'
@@ -39,7 +37,5 @@ p = [models.Problems(title=u'Mükemmel sayı', body=body, count=5620, related='B
                      )]
 for i in p:
     db.session.add(i)
-
-
 
 db.session.commit()

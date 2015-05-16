@@ -16,8 +16,7 @@ class News(db.Model):
     def __init__(self, title=None, body=None):
         self.title = title
         self.body = body
-        self.slug = slugify(title) #hata kontrolu ekle
-
+        self.slug = slugify(title)  # hata kontrolu ekle
 
     def __repr__(self):
         return '<News %r>' % (self.title)
@@ -70,4 +69,3 @@ class User(db.Model, UserMixin):
     roles = db.relationship(
         'Role', secondary=roles_users,
         backref=db.backref('users', lazy='dynamic'))
-
