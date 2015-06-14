@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="col-sm-8">
+    <div class="col-sm-12">
         <div class="page-header">
-            <h2>{{ problem.title }} <span class="badge">{{ problem.count }}</span> <span class="label label-success">Çözüldü</span>
-                <span class="label label-danger">Hatalı</span></h2>
+            <h2>{{ problem.title }} <span class="badge">{{ problem.count }}</span></h2>
         </div>
+    </div>
+    <div class="col-sm-8">
         {{ problem.body|markdown }}
 
         <div class="panel panel-default">
@@ -19,7 +20,20 @@
         </div>
     </div>
 
-<div class="col-sm-4 well"><p>Confucius says: intuition, tantra and travel.When one develops uniqueness and joy, one is able to discover awareness.</p></div>
+    <div class="col-sm-4 well">
+        <div class="container-fluid">
+            <div class="row"><h3><span class="label label-success">Çözüldü</span>
+                <span class="label label-danger">Hatalı</span</h3></div>
+            <div class="row"><p>Eski kodlar: </p></div>
+            <div class="row"><p>Ben kodumu kendi editorumde yazarım sizin js editorunuze kalmadık!</p></div>
+            <div class="row"><h3><span class="label label-success">Çözüldü</span>
+                <span class="label label-danger">Hatalı</span</h3></div>
+            <div class="row"><h3><span class="label label-success">Çözüldü</span>
+                <span class="label label-danger">Hatalı</span</h3></div>
+            <div class="row"><a href="{{ url_for('problem_solution',slug=problem.slug) }}">Tamam beceremedim cevabı göster</a></div>
+        </div>
+
+    </div>
 
 
     <!-- /container -->
