@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="col-sm-12">
+        <div class="page-header">
+            <h1>{{ problem.title }} Çözüm <span class="badge">{{ problem.count }}</span></h1>
+            <h5>Yazar: {{ problem.author }} Tarih: {{ problem.timestamp }}</h5>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        {{ problem.solution|markdown }}
+
+
+    </div>
+
+    <div class="col-sm-4 well">
+        <div class="container-fluid">
+            {% if current_user.is_active() %}
+                <div class="row"><h3><span class="label label-success">Çözüldü</span>
+                    <span class="label label-danger">Hatalı</span</h3></div>
+                <div class="row"><p>Eski kodlar: </p></div>
+                <div class="row"><p>Ben kodumu kendi editorumde yazarım sizin js editorunuze kalmadık!</p></div>
+            {% endif %}
+            <div class="row"><a href="{{ url_for('problem_suggestion',slug=problem.slug) }}">Soru yanlış/Net değil
+                yazarı getirin bana</a></div>
+            <div class="row"><a href="{{ url_for('problem',slug=problem.slug) }}">Geri probleme dön kendim çözmüş gibi
+                yapacam</a></div>
+        </div>
+
+    </div>
+
+
+    <!-- /container -->
+{% endblock %}

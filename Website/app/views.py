@@ -51,8 +51,8 @@ def problem(slug):
 @app.route('/problem/<slug>/solution')
 @login_required
 def problem_solution(slug):
-    solution = Problems.query.filter_by(slug=slug).first()
-    return render_template('problem.html', title=solution.title, solution=solution)
+    problem = Problems.query.filter_by(slug=slug).first()
+    return render_template('problem_solution.html', title=problem.title, problem=problem)
 
 @app.route('/problem/<slug>/suggestion')
 @login_required
