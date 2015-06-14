@@ -31,29 +31,29 @@ Bu soruda size verilen inputun mükemmel sayı olup olmadığını belirteceksin
 	Input'ta girilen sayı mükemmel ise "YES", değil ise "NO".
 	Output'un sonuna endline ("\\n") koyabilirsiniz.
 
-| Örnek Input 1: |\n
-| -------------- |\n
-| 28             |\n
+| Örnek Input 1: |
+| -------------- |
+| 28             |
 
-| Örnek Output 1: |\n
-| --------------- |\n
-| YES             |\n
+| Örnek Output 1: |
+| --------------- |
+| YES             |
 
 * Örnek 1'de input olarak verilen sayının kendisi hariç pozitif tam bölenlerinin toplamı 1+2+4+7+14=28. Bu nedenle 28 bir mükemmel sayıdır. Bu yüzden Örnek 1'in output'u "YES" olmalı.
 
-| Örnek Input 2: |\n
-| -------------- |\n
-| 38             |\n
+| Örnek Input 2: |
+| -------------- |
+| 38             |
 
-| Örnek Output 2: |\n
-| --------------- |\n
-| NO              |\n
+| Örnek Output 2: |
+| --------------- |
+| NO              |
 
 * Örnek 2'de input olarak verilen sayının kendisi hariç pozitif tam bölenlerinin toplamı 1+2+19=22. 22, 38'e eşit olmadığı için 38 bir mükemmel sayı değildir. Bu nedenle Örnek 2'nin output'u "NO" olmalı.
 
 
 """
-p = [models.Problems(title=u'Mükemmel sayı', body=body, count=5620, related='Basic op',
+p = [models.Problems(title=u'Mükemmel sayı', body=body, solution=body+u"solution", count=5620, related='Basic op',
                      difficulty='Z1',
                      ),
      models.Problems(title=u'Bozuk sayı', body='bozuk_sayi', count=55, related='Basic op',

@@ -3,7 +3,14 @@
 {% block content %}
     <div class="col-sm-12">
         <div class="page-header">
-            <h2>{{ problem.title }} <span class="badge">{{ problem.count }}</span></h2>
+            <h1>{{ problem.title }} <span class="badge">{{ problem.count }}</span>
+                {% if current_user.is_active() %}
+                    <small><a class="small"
+                              href="{{ url_for('problem_solution',slug=problem.slug) }}">Şimdilik beceremedim ama ilerde
+                        becerecem
+                        listesine ekle</a></small></h1>
+                {% endif %}
+            <h5>Yazar: {{ problem.author }} Tarih: {{ problem.timestamp }}</h5>
         </div>
     </div>
     <div class="col-sm-8">
@@ -22,15 +29,16 @@
 
     <div class="col-sm-4 well">
         <div class="container-fluid">
-            <div class="row"><h3><span class="label label-success">Çözüldü</span>
-                <span class="label label-danger">Hatalı</span</h3></div>
-            <div class="row"><p>Eski kodlar: </p></div>
-            <div class="row"><p>Ben kodumu kendi editorumde yazarım sizin js editorunuze kalmadık!</p></div>
-            <div class="row"><h3><span class="label label-success">Çözüldü</span>
-                <span class="label label-danger">Hatalı</span</h3></div>
-            <div class="row"><h3><span class="label label-success">Çözüldü</span>
-                <span class="label label-danger">Hatalı</span</h3></div>
-            <div class="row"><a href="{{ url_for('problem_solution',slug=problem.slug) }}">Tamam beceremedim cevabı göster</a></div>
+            {% if current_user.is_active() %}
+                <div class="row"><h3><span class="label label-success">Çözüldü</span>
+                    <span class="label label-danger">Hatalı</span</h3></div>
+                <div class="row"><p>Eski kodlar: </p></div>
+                <div class="row"><p>Ben kodumu kendi editorumde yazarım sizin js editorunuze kalmadık!</p></div>
+            {% endif %}
+            <div class="row"><a href="{{ url_for('problem_suggestion',slug=problem.slug) }}">Soru yanlış/Net değil
+                yazarı getirin bana</a></div>
+            <div class="row"><a href="{{ url_for('problem_solution',slug=problem.slug) }}">Tamam beceremedim cevabı
+                göster</a></div>
         </div>
 
     </div>

@@ -6,7 +6,6 @@ from slugify import slugify
 
 
 class News(db.Model):
-    __tablename__ = 'news'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
@@ -23,19 +22,22 @@ class News(db.Model):
 
 
 class Problems(db.Model):
-    __tablename__ = 'problems'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
+    author = db.Column(db.String(64), unique=False)
     slug = db.Column(db.String(64), unique=True)
-    body = db.Column(db.String, unique=True)  # test icin unique false
+    body = db.Column(db.String, unique=True)
+    solution = db.Column(db.String, unique=True)
     count = db.Column(db.Integer, unique=False)
-    related = db.Column(db.String(64), unique=False)  # baska bir tabloya relation ver
+    related = db.Column(db.String(64), unique=False)
     difficulty = db.Column(db.String(64), unique=False)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
-    def __init__(self, title=None, body=None, count=None, related=None, difficulty=None):
+    def __init__(self, title=None, author=u"admin", body=None, solution=None, count=None, related=None, difficulty=None):
         self.title = title
+        self.author = author
         self.body = body
+        self.solution = solution
         self.count = count
         self.related = related
         self.difficulty = difficulty
