@@ -8,7 +8,14 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 
-Markdown(app,extensions=['extra'],output_format='html5')
+extension_configs = {
+    'codehilite':
+        {
+            'guess_lang': False,
+
+        }
+}
+Markdown(app, extensions=['extra', 'codehilite'], output_format='html5',extension_configs=extension_configs)
 
 errors.init_app(app)
 

@@ -4,3 +4,4 @@ flask-sqlalchemy
 flask-security
 py-bcrypt
 flask-markdown
+pygments
