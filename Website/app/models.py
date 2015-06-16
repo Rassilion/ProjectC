@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from app import db
-from flask.ext.security import UserMixin, RoleMixin
+from flask.ext.security import UserMixin, RoleMixin, SQLAlchemyUserDatastore
 import datetime
 from slugify import slugify
 
@@ -33,7 +33,8 @@ class Problems(db.Model):
     difficulty = db.Column(db.String(64), unique=False)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
-    def __init__(self, title=None, author=u"admin", body=None, solution=None, count=None, related=None, difficulty=None):
+    def __init__(self, title=None, author=u"admin", body=None, solution=None, count=None, related=None,
+                 difficulty=None):
         self.title = title
         self.author = author
         self.body = body
@@ -58,6 +59,9 @@ class Role(db.Model, RoleMixin):
     name = db.Column(db.String, unique=True)
     description = db.Column(db.String)
 
+    def __unicode__(self):
+        return self.name
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -71,3 +75,9 @@ class User(db.Model, UserMixin):
     roles = db.relationship(
         'Role', secondary=roles_users,
         backref=db.backref('users', lazy='dynamic'))
+
+    def __unicode__(self):
+        return self.username
+
+
+user_datastore = SQLAlchemyUserDatastore(db, User, Role)
