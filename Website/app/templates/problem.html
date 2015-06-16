@@ -46,11 +46,3 @@
 
     <!-- /container -->
 {% endblock %}
-{% block js %}
-    <script src="{{ url_for('static', filename='js/ace/ace.js') }}" type="text/javascript" charset="utf-8"></script>
-    <script>
-        var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/ambience");
-        editor.getSession().setMode("ace/mode/c_cpp");
-    </script>
-{% endblock %}
