@@ -1,4 +1,6 @@
 {% import "macros/wtf.html" as wtf %}
+<!-- navbar list ids -->
+{% set active_page = active_page|default(1) -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>{% block head %}
@@ -45,9 +47,12 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url_for('index') }}">Anasayfa</a></li>
-                    <li><a href="{{ url_for('problem_list') }}">Problemler</a></li>
-                    <li><a href="{{ url_for('about') }}">Hakkında</a></li>
+                    <li {% if 1 == active_page %} class="active"{% endif %}><a
+                            href="{{ url_for('index') }}">Anasayfa</a></li>
+                    <li {% if 2 == active_page %} class="active"{% endif %}><a href="{{ url_for('problem_list') }}">Problemler</a>
+                    </li>
+                    <li {% if 3 == active_page %} class="active"{% endif %}><a
+                            href="{{ url_for('about') }}">Hakkında</a></li>
                 </ul>
 
 
