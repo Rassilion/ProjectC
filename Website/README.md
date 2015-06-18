@@ -36,7 +36,7 @@ shell scripts to deoploy
 
 # get from git
 cd /home/deniz/repo/ProjectC.git
-git fetch origin
+git fetch origin master:master
 
 source /home/deniz/.env/bin/activate
 
