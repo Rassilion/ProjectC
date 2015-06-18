@@ -3,31 +3,56 @@ Setup: https://www.digitalocean.com/community/tutorials/how-to-serve-flask-appli
 
 Link: http://107.191.111.139/
 
-# Gereken düzeltmeler
-- Tema dosyaları daha moduler hale gelebilir
+# Deploy script
+githup base repo at ~/repo/ProjectC.git
+work dir at ~/deploy
+uwsgi an nginx server sym link ~/Websitesi
 
+git post-recive
 
-# ChangeLog
+```
+#!/usr/bin/env ruby
+# post-receive
 
-### 0.1.2
-- Kayıt olma eklendi
-- WTF eklendi
+# 1. Read STDIN (Format: "from_commit to_commit branch_name")
+from, to, branch = ARGF.read.split " "
 
-### 0.1.1
-- Users model eklendi
-- Temalara title eklendi
-- Duyuru sayfası eklendi
+# 2. Only deploy if master branch was pushed
+if (branch =~ /master$/) == nil
+    puts "Received branch #{branch}, not deploying."
+    exit
+end
 
-### 0.1.0
-- Flask module yapısı eklendi
-- Database eklendi
+# 3. Copy files to deploy directory
+deploy_to_dir = File.expand_path('~/deploy')
+`GIT_WORK_TREE="#{deploy_to_dir}" git checkout -f master`
+puts "DEPLOY: master(#{to}) copied to '#{deploy_to_dir}'"
+```
 
-### 0.0.2
-- Python unicode_literals import edildi (etkileri kontrol edilecek)
-- View fonksiyonlarına deneme amaçlı liste bilgiler eklendi
-- Jinja2 temaları dinamik hale getirildi
+shell scripts to deoploy
 
+```
+#!/bin/bash
 
-#### Alpha Başlangıç
-- Flask app yapısı oluşturuldu
-- Prototip Tema Jinja2 ye geçirildi
+# get from git
+cd /home/deniz/repo/ProjectC.git
+git fetch origin
+
+source /home/deniz/.env/bin/activate
+
+pip install -r /home/deniz/deploy/Website/requirements.txt
+
+deactivate
+
+echo "`sudo bash /home/deniz/restart.sh`"
+```
+
+```
+#!/bin/bash
+#restart servers
+/etc/init.d/nginx stop
+/etc/init.d/nginx start
+stop website
+start website
+
+```
