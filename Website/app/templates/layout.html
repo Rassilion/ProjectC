@@ -94,7 +94,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="row">
             <div class="col-md-12">
                 <p>Copyright &copy; Project C 2015 - Rendered in {{ g.request_time() }}</p>
@@ -114,6 +114,7 @@
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ url_for('static', filename='js/ie10-viewport-bug-workaround.js') }}"></script>
+
 
 {% block js %}
 {% endblock %}
