@@ -4,7 +4,7 @@
     <div class="col-sm-12">
         <div class="page-header">
             <h1>{{ problem.title }} Çözüm <span class="badge">{{ problem.count }}</span></h1>
-            <h5>Yazar: {{ problem.author }} Tarih: {{ problem.timestamp }}</h5>
+            <h5>Yazar: {{ problem.author }} Tarih: {{ problem.timestamp|datetimeformat }}</h5>
         </div>
     </div>
     <div class="col-sm-8">

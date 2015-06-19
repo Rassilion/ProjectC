@@ -4,6 +4,7 @@ from config import Config
 from flaskext.markdown import Markdown
 import errors
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
@@ -21,7 +22,10 @@ errors.init_app(app)
 
 # WTForms helpers
 from utils import wtf
-
 wtf.add_helpers(app)
+
+# jinja filters
+from utils.filters import datetimeformat
+app.jinja_env.filters['datetimeformat'] = datetimeformat
 
 from views import *
