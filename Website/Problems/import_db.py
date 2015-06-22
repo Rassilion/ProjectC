@@ -21,7 +21,7 @@ class ImportDB(Command):
     @staticmethod
     def import_db():
         # bütün problemler
-        problems = os.listdir(os.path.dirname(__file__))
+        problems = os.listdir(os.path.dirname(os.path.abspath(__file__)))
         # flask basedir
         basedir = Config.basedir
         static_resources_dir = os.path.join(basedir, 'static', 'resources')
@@ -31,16 +31,17 @@ class ImportDB(Command):
             # dosya adında nokta varsa atla
             if "." in i:
                 continue
+            path = os.path.join(os.path.dirname(os.path.abspath(__file__)), i)
             # metadatyı oku
-            input_file = codecs.open(os.path.join(i, 'meta'), mode="r", encoding="utf-8-sig")
+            input_file = codecs.open(os.path.join(path, 'meta'), mode="r", encoding="utf-8-sig")
             text = input_file.read()
             # metadatyı işle
             html = md.convert(text)
             # soruyu oku
-            input_file = codecs.open(os.path.join(i, 'question.md'), mode="r", encoding="utf-8-sig")
+            input_file = codecs.open(os.path.join(path, 'question.md'), mode="r", encoding="utf-8-sig")
             text = input_file.read()
             # çözümü oku
-            input_file = codecs.open(os.path.join(i, 'solution.md'), mode="r", encoding="utf-8-sig")
+            input_file = codecs.open(os.path.join(path, 'solution.md'), mode="r", encoding="utf-8-sig")
             text2 = input_file.read()
 
             if models.Problem.query.filter_by(title=md.Meta['title'][0]).first() is None:
@@ -59,8 +60,8 @@ class ImportDB(Command):
             else:
                 print "skip " + md.Meta['title'][0]
             # eğer resources verildiyse kopyala copy
-            if os.path.isdir(os.path.join(i, 'resources')):
-                resdir = os.path.join(i, 'resources')
+            if os.path.isdir(os.path.join(path, 'resources')):
+                resdir = os.path.join(path, 'resources')
                 res = os.listdir(resdir)
                 dest_res = os.path.join(static_resources_dir, i)
                 # hedef klasör yoksa yarat
