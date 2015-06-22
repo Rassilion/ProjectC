@@ -58,7 +58,7 @@ def about():
 
 @app.route('/news/<slug>')
 def news(slug):
-    post = News.query.filter_by(slug=slug).first()
+    post = News.query.filter_by(slug=slug).first_or_404()
     return render_template('news.html', title=post.title, post=post)
 
 
@@ -70,21 +70,21 @@ def problem_list():
 
 @app.route('/problem/<slug>')
 def problem(slug):
-    problem = Problem.query.filter_by(slug=slug).first()
+    problem = Problem.query.filter_by(slug=slug).first_or_404()
     return render_template('problem.html', title=problem.title, problem=problem)
 
 
 @app.route('/problem/<slug>/solution')
 @login_required
 def problem_solution(slug):
-    problem = Problem.query.filter_by(slug=slug).first()
+    problem = Problem.query.filter_by(slug=slug).first_or_404()
     return render_template('problem_solution.html', title=problem.title, problem=problem)
 
 
 @app.route('/problem/<slug>/suggestion')
 @login_required
 def problem_suggestion(slug):
-    problem = Problem.query.filter_by(slug=slug).first()
+    problem = Problem.query.filter_by(slug=slug).first_or_404()
     return render_template('problem.html', title=problem.title, problem=problem)
 
 
