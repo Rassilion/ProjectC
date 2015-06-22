@@ -5,6 +5,7 @@ from flask.ext.security.script import CreateUserCommand, AddRoleCommand, \
 
 from app import app
 from app.script import ResetDB, PopulateDB
+from Problems.import_db import ImportDB
 
 manager = Manager(app)
 manager.add_command("shell", Shell())
@@ -14,6 +15,7 @@ manager.add_command("clean", Clean())
 
 manager.add_command("reset_db", ResetDB())
 manager.add_command("populate_db", PopulateDB())
+manager.add_command("import_db", ImportDB())
 
 manager.add_command('create_user', CreateUserCommand())
 manager.add_command('add_role', AddRoleCommand())
