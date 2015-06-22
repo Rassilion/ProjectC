@@ -9,43 +9,61 @@ class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
-    body = db.Column(db.String, unique=True)
+    body = db.Column(db.String)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __init__(self, title=None, body=None):
         self.title = title
         self.body = body
-        self.slug = slugify(title)  # hata kontrolu ekle
+        self.slug = slugify(title)
 
-    def __repr__(self):
-        return '<News %r>' % (self.title)
+    def __unicode__(self):
+        return self.title
 
 
-class Problems(db.Model):
+tags_problems = db.Table(
+    'tags_problems',
+    db.Column('problem_id', db.Integer, db.ForeignKey('problem.id')),
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')))
+
+
+class Tag(db.Model, RoleMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True)
+    description = db.Column(db.String)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Problem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
-    author = db.Column(db.String(64), unique=False)
+    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     slug = db.Column(db.String(64), unique=True)
-    body = db.Column(db.String, unique=True)
-    solution = db.Column(db.String, unique=True)
-    count = db.Column(db.Integer, unique=False)
-    related = db.Column(db.String(64), unique=False)
-    difficulty = db.Column(db.String(64), unique=False)
+    body = db.Column(db.String)
+    solution = db.Column(db.String)
+    count = db.Column(db.Integer)
+    difficulty = db.Column(db.String(64))
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    tags = db.relationship(
+        'Tag', secondary=tags_problems,
+        backref=db.backref('problems', lazy='dynamic'))
+    submissions = db.relationship('Submission', backref='problem', lazy='dynamic')
 
-    def __init__(self, title=None, author=u"admin", body=None, solution=None, count=None, related=None,
-                 difficulty=None):
+    def __init__(self, title=None, author_id=1, body=None, solution=None, count=None,
+                 difficulty=None,timestamp=datetime.datetime.utcnow):
         self.title = title
-        self.author = author
+        self.author_id = author_id
         self.body = body
         self.solution = solution
         self.count = count
-        self.related = related
         self.difficulty = difficulty
         self.slug = slugify(title)
+        self.timestamp=timestamp
 
-    def __repr__(self):
-        return '<Problems %r>' % (self.title)
+    def __unicode__(self):
+        return self.title
 
 
 roles_users = db.Table(
@@ -75,9 +93,21 @@ class User(db.Model, UserMixin):
     roles = db.relationship(
         'Role', secondary=roles_users,
         backref=db.backref('users', lazy='dynamic'))
+    problems = db.relationship('Problem', backref='author', lazy='dynamic')
+    submissions = db.relationship('Submission', backref='user', lazy='dynamic')
 
     def __unicode__(self):
         return self.username
+
+
+class Submission(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    problem_id = db.Column(db.Integer, db.ForeignKey('problem.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    time = db.Column(db.Integer)
+    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    successful = db.Column(db.Boolean)
+    error = db.Column(db.String(255))
 
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)

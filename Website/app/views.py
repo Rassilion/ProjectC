@@ -6,7 +6,7 @@ from flask.ext.login import login_required
 from flask.ext.security import Security, utils
 from app import app, db
 from flask import request, g, render_template, redirect, url_for, session
-from models import User, Role, News, Problems, user_datastore
+from models import User, Role, News, Problem, user_datastore
 from admin import init_admin
 
 # initilize flask-security
@@ -26,6 +26,8 @@ def before_request():
         user_datastore.create_user(email='user@user.com', username='user', password=encrypted_password)
     if not user_datastore.get_user('admin@admin.com'):
         user_datastore.create_user(email='admin@admin.com', username='admin', password=encrypted_password)
+    if not user_datastore.get_user('lava@lava.com'):
+        user_datastore.create_user(email='lava@lava.com', username='lavasystem', password=encrypted_password)
 
     # Commit any database changes; the User and Roles must exist before we can add a Role to the User
     db.session.commit()
@@ -34,6 +36,8 @@ def before_request():
     # Users already have these Roles.) Again, commit any database changes.
     user_datastore.add_role_to_user('user@user.com', 'end-user')
     user_datastore.add_role_to_user('admin@admin.com', 'admin')
+    user_datastore.add_role_to_user('lava@lava.com', 'admin')
+    user_datastore.add_role_to_user('lava@lava.com', 'end-user')
     db.session.commit()
 
     g.request_start_time = time.time()
@@ -60,27 +64,27 @@ def news(slug):
 
 @app.route('/problems')
 def problem_list():
-    problems = Problems.query.all()
+    problems = Problem.query.all()
     return render_template('problem_list.html', title='Problem Listesi', problems=problems)
 
 
 @app.route('/problem/<slug>')
 def problem(slug):
-    problem = Problems.query.filter_by(slug=slug).first()
+    problem = Problem.query.filter_by(slug=slug).first()
     return render_template('problem.html', title=problem.title, problem=problem)
 
 
 @app.route('/problem/<slug>/solution')
 @login_required
 def problem_solution(slug):
-    problem = Problems.query.filter_by(slug=slug).first()
+    problem = Problem.query.filter_by(slug=slug).first()
     return render_template('problem_solution.html', title=problem.title, problem=problem)
 
 
 @app.route('/problem/<slug>/suggestion')
 @login_required
 def problem_suggestion(slug):
-    problem = Problems.query.filter_by(slug=slug).first()
+    problem = Problem.query.filter_by(slug=slug).first()
     return render_template('problem.html', title=problem.title, problem=problem)
 
 
