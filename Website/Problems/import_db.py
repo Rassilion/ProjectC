@@ -9,70 +9,73 @@ from app import models
 from app.config import Config
 from shutil import copy
 import markdown
-# bütün problemler
-problems = os.listdir(os.path.dirname(__file__))
-# flask basedir
-basedir = Config.basedir
-static_resources_dir = os.path.join(basedir, 'static', 'resources')
-# markdown meta eklentili
-md = markdown.Markdown(extensions=['meta'])
+from flask.ext.script import Command
 
 
-def import_db():
-    for i in problems:
-        # dosya adında nokta varsa atla
-        if "." in i:
-            continue
-        # metadatyı oku
-        input_file = codecs.open(os.path.join(i, 'meta'), mode="r", encoding="utf-8-sig")
-        text = input_file.read()
-        # metadatyı işle
-        html = md.convert(text)
-        # soruyu oku
-        input_file = codecs.open(os.path.join(i, 'question.md'), mode="r", encoding="utf-8-sig")
-        text = input_file.read()
-        # çözümü oku
-        input_file = codecs.open(os.path.join(i, 'solution.md'), mode="r", encoding="utf-8-sig")
-        text2 = input_file.read()
+class ImportDB(Command):
+    """Imports problem markdown to database"""
 
-        if models.Problem.query.filter_by(title=md.Meta['title'][0]).first() is None:
-            # sql nesnesini yarat ve database ekle
-            author = models.User.query.filter_by(username=md.Meta['author'][0]).first()
-            if author is None:
-                author = models.User.query.filter_by(username="admin").first()
-            prob = models.Problem(title=md.Meta['title'][0], body=text, solution=text2,
-                                  count=0)
-            #tarihi düzenle
-            prob.timestamp = datetime.strptime(md.Meta['date'][0], "%Y-%m-%d")
-            #soruyu ekle
-            #db.session.add(prob)
-            #soruya yazar ekle
-            author.problems.append(prob)
-        else:
-            print "skip " + md.Meta['title'][0]
-        # eğer resources verildiyse kopyala copy
-        if os.path.isdir(os.path.join(i, 'resources')):
-            resdir = os.path.join(i, 'resources')
-            res = os.listdir(resdir)
-            dest_res = os.path.join(static_resources_dir, i)
-            # hedef klasör yoksa yarat
-            make_sure_path_exists(dest_res)
-            # bütün resourceleri kopyala i/resources to resources/i
-            for j in res:
-                copy(os.path.join(resdir, j), os.path.join(dest_res, j))
+    def run(self, **kwargs):
+        self.import_db()
 
-    # database değişikliklerini kaydet
-    db.session.commit()
+    @staticmethod
+    def import_db():
+        # bütün problemler
+        problems = os.listdir(os.path.dirname(__file__))
+        # flask basedir
+        basedir = Config.basedir
+        static_resources_dir = os.path.join(basedir, 'static', 'resources')
+        # markdown meta eklentili
+        md = markdown.Markdown(extensions=['meta'])
+        for i in problems:
+            # dosya adında nokta varsa atla
+            if "." in i:
+                continue
+            # metadatyı oku
+            input_file = codecs.open(os.path.join(i, 'meta'), mode="r", encoding="utf-8-sig")
+            text = input_file.read()
+            # metadatyı işle
+            html = md.convert(text)
+            # soruyu oku
+            input_file = codecs.open(os.path.join(i, 'question.md'), mode="r", encoding="utf-8-sig")
+            text = input_file.read()
+            # çözümü oku
+            input_file = codecs.open(os.path.join(i, 'solution.md'), mode="r", encoding="utf-8-sig")
+            text2 = input_file.read()
 
+            if models.Problem.query.filter_by(title=md.Meta['title'][0]).first() is None:
+                # sql nesnesini yarat ve database ekle
+                author = models.User.query.filter_by(username=md.Meta['author'][0]).first()
+                if author is None:
+                    author = models.User.query.filter_by(username="admin").first()
+                prob = models.Problem(title=md.Meta['title'][0], body=text, solution=text2,
+                                      count=0)
+                # tarihi düzenle
+                prob.timestamp = datetime.strptime(md.Meta['date'][0], "%Y-%m-%d")
+                # soruyu ekle
+                # db.session.add(prob)
+                # soruya yazar ekle
+                author.problems.append(prob)
+            else:
+                print "skip " + md.Meta['title'][0]
+            # eğer resources verildiyse kopyala copy
+            if os.path.isdir(os.path.join(i, 'resources')):
+                resdir = os.path.join(i, 'resources')
+                res = os.listdir(resdir)
+                dest_res = os.path.join(static_resources_dir, i)
+                # hedef klasör yoksa yarat
+                try:
+                    os.makedirs(dest_res)
+                except OSError as exception:
+                    if exception.errno != errno.EEXIST:
+                        raise
+                # bütün resourceleri kopyala i/resources to resources/i
+                for j in res:
+                    copy(os.path.join(resdir, j), os.path.join(dest_res, j))
 
-# klasör yaratma çalış varsa boşver ama başka hata çıkarsa bildir
-def make_sure_path_exists(path):
-    try:
-        os.makedirs(path)
-    except OSError as exception:
-        if exception.errno != errno.EEXIST:
-            raise
+        # database değişikliklerini kaydet
+        db.session.commit()
 
 
 if __name__ == "__main__":
-    import_db()
+    ImportDB.import_db()

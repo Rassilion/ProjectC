@@ -6,3 +6,4 @@ py-bcrypt
 flask-markdown
 pygments
 flask-admin
+Flask-Script
