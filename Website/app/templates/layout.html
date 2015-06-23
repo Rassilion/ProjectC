@@ -69,7 +69,8 @@
 
                             <ul class="dropdown-menu">
 
-                                <li><a href="{{ url_for('user_profile', username=current_user.username) }}">Profil sayfanız</a></li>
+                                <li><a href="{{ url_for('user_profile', username=current_user.username) }}">Profil
+                                    sayfanız</a></li>
 
                                 <li><a href="">Ayarlar</a></li>
 
@@ -97,17 +98,19 @@
         {% block content %}
         {% endblock %}
 
-    </div>
+
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="row">
+        <footer class="container footer">
+
+            <hr style="margin: 5px 1px 0px 0px;">
             <div class="col-md-12">
-                <hr class="container">
+
                 <p>Copyright &copy; Project C 2015 - Rendered in {{ g.request_time() }}</p>
             </div>
-        </div>
-    </footer>
+
+        </footer>
+    </div>
 
 </div>
 
