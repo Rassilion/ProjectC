@@ -3,9 +3,9 @@
 {% block content %}
     <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">Yazar {{ author.username }}</div>
+        <div class="panel-heading">{{ tag.name }}</div>
         <div class="panel-body">
-            <p>{{ author.bio }}</p>
+            <p>{{ tag.description }}</p>
         </div>
 
         {{ helper.problem_list(problems) }}

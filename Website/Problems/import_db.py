@@ -53,8 +53,10 @@ class ImportDB(Command):
                                       count=0)
                 # tarihi düzenle
                 prob.timestamp = datetime.strptime(md.Meta['date'][0], "%Y-%m-%d")
-                # soruyu ekle
-                # db.session.add(prob)
+                # tag ekle
+                for i in md.Meta['relate']:
+                    tag=models.get_or_create(models.Tag,name=i)
+                    prob.tags.append(tag)
                 # soruya yazar ekle
                 author.problems.append(prob)
             else:

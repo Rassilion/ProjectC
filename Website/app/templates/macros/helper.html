@@ -1,0 +1,28 @@
+{% macro problem_list(problems) %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Soru adı</th>
+            <th>İlgili konular</th>
+            <th>Çözüm sayısı</th>
+            <th>Zorluk</th>
+        </tr>
+        </thead>
+        {% for problem in problems %}
+            <tr>
+                <td>{{ problem.id }}</td>
+                <td><a href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
+                <td>{{ problem_tag(problem.tags) }}</td>
+                <td>{{ problem.count }}</td>
+                <td>{{ problem.difficulty }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{%- endmacro %}
+
+{% macro problem_tag(tags) %}
+    {% for tag in tags %}
+        <a href="{{ url_for('tag', name=tag.name) }}">{{ tag.name }}</a>
+    {% endfor %}
+{%- endmacro %}

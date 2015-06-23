@@ -111,3 +111,16 @@ class Submission(db.Model):
 
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+
+def get_or_create(model, **kwargs):
+    """SqlAlchemy implementation of Django's get_or_create.
+    """
+    session = db.session
+    instance = session.query(model).filter_by(**kwargs).first()
+    if instance:
+        return instance
+    else:
+        instance = model(**kwargs)
+        session.add(instance)
+        session.commit()
+        return instance

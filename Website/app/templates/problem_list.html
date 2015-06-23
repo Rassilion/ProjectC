@@ -12,35 +12,5 @@
         <input type="checkbox" id="inlineCheckbox1" value="option1"> Çözülmüş soruları gösterme
     </label></div>
 
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Soru adı</th>
-            <th>İlgili konular</th>
-            <th>Çözüm sayısı</th>
-            <th>Zorluk</th>
-        </tr>
-        </thead>
-        {% for problem in problems %}
-            <tr>
-                <td>{{ problem.id }}</td>
-                <td><a href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
-                <td>{{ problem.related }}</td>
-                <td>{{ problem.count }}</td>
-                <td>{{ problem.difficulty }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    <ul class="pager">
-        <li class="previous">
-            <a href="#">&larr; Older</a>
-        </li>
-        <li class="next">
-            <a href="#">Newer &rarr;</a>
-        </li>
-    </ul>
-
-
-    <!-- /container -->
+        {{ helper.problem_list(problems) }}
 {% endblock %}

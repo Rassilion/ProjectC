@@ -6,7 +6,7 @@ from flask.ext.login import login_required
 from flask.ext.security import Security, utils
 from app import app, db
 from flask import request, g, render_template, redirect, url_for, session, send_from_directory
-from models import User, Role, News, Problem, user_datastore
+from models import *
 from admin import init_admin
 
 # initilize flask-security
@@ -76,5 +76,12 @@ def author_profile(username):
     problems = author.problems
     return render_template('author_profile.html', title=author.username,author=author, problems=problems)
 
+@app.route('/tag/<name>')
+def tag(name):
+    tag = Tag.query.filter_by(name=name).first_or_404()
+    problems = tag.problems
+    return render_template('tag.html', title=tag.name,tag=tag, problems=problems)
 
 init_admin()
+
+
