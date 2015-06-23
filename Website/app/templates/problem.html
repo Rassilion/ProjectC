@@ -10,7 +10,7 @@
                         becerecem
                         listesine ekle</a></small></h1>
                 {% endif %}
-            <h5>Yazar: {{ problem.author }} Tarih: {{ problem.timestamp|datetimeformat }}</h5>
+            <h5>Yazar: <a href="{{ url_for('author_profile',username=problem.author) }}">{{ problem.author }}</a> Tarih: {{ problem.timestamp|datetimeformat }}</h5>
         </div>
     </div>
     <div class="col-sm-8">

@@ -18,11 +18,13 @@ def before_request():
     g.request_start_time = time.time()
     g.request_time = lambda: "%.5fs" % (time.time() - g.request_start_time)
 
+
 # search engine things
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
+
 
 @app.route('/')
 @app.route('/index')
@@ -66,6 +68,13 @@ def problem_solution(slug):
 def problem_suggestion(slug):
     problem = Problem.query.filter_by(slug=slug).first_or_404()
     return render_template('problem.html', title=problem.title, problem=problem)
+
+
+@app.route('/author/<username>')
+def author_profile(username):
+    author = User.query.filter_by(username=username).first_or_404()
+    problems = author.problems
+    return render_template('author_profile.html', title=author.username,author=author, problems=problems)
 
 
 init_admin()
