@@ -44,9 +44,12 @@ def news(slug):
     return render_template('news.html', title=post.title, post=post)
 
 
-@app.route('/problems')
-def problem_list():
-    problems = Problem.query.all()
+@app.route('/problems/')
+@app.route('/problems/<int:page>')
+def problem_list(page=1):
+    problems = Problem.query.paginate(
+        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+    )
     return render_template('problem_list.html', title='Problem Listesi', problems=problems)
 
 
@@ -70,10 +73,13 @@ def problem_suggestion(slug):
     return render_template('problem.html', title=problem.title, problem=problem)
 
 
-@app.route('/author/<username>')
-def author_profile(username):
+@app.route('/author/<username>/')
+@app.route('/author/<username>/<int:page>')
+def author_profile(username, page=1):
     author = User.query.filter_by(username=username).first_or_404()
-    problems = author.problems
+    problems = author.problems.paginate(
+        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+    )
     return render_template('author_profile.html', title=author.username, author=author, problems=problems)
 
 

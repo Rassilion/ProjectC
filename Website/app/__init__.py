@@ -4,7 +4,6 @@ from config import Config
 from flaskext.markdown import Markdown
 import errors
 
-
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
@@ -16,16 +15,19 @@ extension_configs = {
 
         }
 }
-Markdown(app, extensions=['extra', 'codehilite'], output_format='html5',extension_configs=extension_configs)
+Markdown(app, extensions=['extra', 'codehilite'], output_format='html5', extension_configs=extension_configs)
 
 errors.init_app(app)
 
 # WTForms helpers
 from utils import wtf
+
 wtf.add_helpers(app)
 
 # jinja filters
-from utils.filters import datetimeformat
+from utils.filters import datetimeformat, pagepop
+
 app.jinja_env.filters['datetimeformat'] = datetimeformat
+app.jinja_env.filters['pagepop'] = pagepop
 
 from views import *

@@ -52,7 +52,7 @@ class Problem(db.Model):
     submissions = db.relationship('Submission', backref='problem', lazy='dynamic')
 
     def __init__(self, title=None, author_id=1, body=None, solution=None, count=None,
-                 difficulty=None,timestamp=datetime.datetime.utcnow):
+                 difficulty=None,timestamp=None):
         self.title = title
         self.author_id = author_id
         self.body = body
@@ -60,6 +60,7 @@ class Problem(db.Model):
         self.count = count
         self.difficulty = difficulty
         self.slug = slugify(title)
+
         self.timestamp=timestamp
 
     def __unicode__(self):

@@ -8,6 +8,7 @@ class Config():
 
     WTF_CSRF_ENABLED = True
     SECRET_KEY = 'Impossible-to-guess-secret-code-that-you-will-never-guess!!!'
+    PRODUCTS_PER_PAGE=20
 
     SECURITY_PASSWORD_HASH = 'bcrypt'
     SECURITY_PASSWORD_SALT = SECRET_KEY

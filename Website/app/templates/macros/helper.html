@@ -9,10 +9,10 @@
             <th>Zorluk</th>
         </tr>
         </thead>
-        {% for problem in problems %}
+        {% for problem in problems.items %}
             <tr>
                 <td>{{ problem.id }}</td>
-                <td><a href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
+                <td><a class="no-underline" href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
                 <td>{{ problem_tag(problem.tags) }}</td>
                 <td>{{ problem.count }}</td>
                 <td>{{ problem.difficulty }}</td>
@@ -23,7 +23,7 @@
 
 {% macro problem_tag(tags) %}
     {% for tag in tags %}
-        <a href="{{ url_for('tag', name=tag.name) }}">{{ tag.name }}</a>
+        <a class="no-underline" href="{{ url_for('tag', name=tag.name) }}">{{ tag.name }}</a>
     {% endfor %}
 {%- endmacro %}
 
@@ -42,10 +42,55 @@
             <tr>
                 <td>{{ submission.id }}</td>
                 <td>{{ submission.timestamp }}</td>
-                <td><a href="{{ url_for('problem', slug=submission.problem.slug) }}">{{ submission.problem.title }}</a></td>
+                <td><a class="no-underline" href="{{ url_for('problem', slug=submission.problem.slug) }}">{{ submission.problem.title }}</a>
+                </td>
                 <td>{{ submission.error }}</td>
                 <td>{{ submission.time }}</td>
             </tr>
         {% endfor %}
     </table>
 {%- endmacro %}
+
+{% macro paginate(paginator) %}
+    {% if paginator.pages >1 %}
+        {# A generally pluggable pagination macro, just supply it with the pagination object #}
+        {# formatted for Bootstrap 3 #}
+
+        {% set view_args = request.view_args|pagepop %}
+        <div class="text-center">
+            <ul class="pagination pagination-sm">
+                {% if paginator.has_prev %}
+                    <li>
+                        <a href="{{ url_for(request.endpoint, page=paginator.prev_num, **view_args) }}"
+                           aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="disabled">
+                        <span aria-hidden="true">&laquo;</span>
+                    </li>
+                {% endif %}
+                {% for page in paginator.iter_pages() %}
+                    {% if page %}
+                        <li {% if page == paginator.page %}class="active"{% endif %}><a
+                                href="{{ url_for(request.endpoint, page=page, **view_args) }}">{{ page }}</a></li>
+                    {% endif %}
+
+                {% endfor %}
+                {% if paginator.has_next %}
+                    <li>
+                        <a href="{{ url_for(request.endpoint, page=paginator.next_num, **view_args) }}"
+                           aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="disabled">
+                        <span aria-hidden="true">&raquo;</span>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endif %}
+{% endmacro %}

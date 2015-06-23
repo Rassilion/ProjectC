@@ -13,3 +13,10 @@ def datetimeformat(value):
     else:
         formatting = u'%d.%m.%Y'
     return value.strftime(formatting.encode('utf-8')).decode('utf-8')
+
+def pagepop(value):
+    try:
+        value.pop('page')
+    except:
+        pass
+    return value
