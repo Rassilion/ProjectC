@@ -5,7 +5,7 @@ from forms import *
 from flask.ext.login import login_required
 from flask.ext.security import Security, utils
 from app import app, db
-from flask import request, g, render_template, redirect, url_for, session
+from flask import request, g, render_template, redirect, url_for, session, send_from_directory
 from models import User, Role, News, Problem, user_datastore
 from admin import init_admin
 
@@ -18,6 +18,11 @@ def before_request():
     g.request_start_time = time.time()
     g.request_time = lambda: "%.5fs" % (time.time() - g.request_start_time)
 
+# search engine things
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 @app.route('/')
 @app.route('/index')
