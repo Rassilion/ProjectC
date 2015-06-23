@@ -64,18 +64,18 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">
                                 <span></span>
-                                Signed in as {{ current_user.username }} <strong class="caret"></strong>
+                                {{ current_user.username }} olarak giriş yaptınız<strong class="caret"></strong>
                             </a>
 
                             <ul class="dropdown-menu">
 
-                                <li><a href="">Your Bio Page</a></li>
+                                <li><a href="{{ url_for('user_profile', username=current_user.username) }}">Profil sayfanız</a></li>
 
-                                <li><a href="">Settings..</a></li>
+                                <li><a href="">Ayarlar</a></li>
 
                                 <li class="divider"></li>
 
-                                <li><a href="{{ url_for_security('logout') }}">Logout</a></li>
+                                <li><a href="{{ url_for_security('logout') }}">Çıkış</a></li>
 
                             </ul>
                         </li>

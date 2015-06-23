@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% set active_page = 2 %}
+{% block content %}
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{ user.username }} hakkında</div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+                <li>125 submission yapıtınız</li>
+                <li>rationuz 0.9 ?</li>
+            </ul>
+        </div>
+        <div class="panel-heading">Son submissionlar</div>
+        {{ helper.submission_list(submissions) }}
+    </div>
+{% endblock %}

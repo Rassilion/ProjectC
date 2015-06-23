@@ -2,7 +2,7 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>#</th>
+            <th>id</th>
             <th>Soru adı</th>
             <th>İlgili konular</th>
             <th>Çözüm sayısı</th>
@@ -25,4 +25,27 @@
     {% for tag in tags %}
         <a href="{{ url_for('tag', name=tag.name) }}">{{ tag.name }}</a>
     {% endfor %}
+{%- endmacro %}
+
+{% macro submission_list(submissions) %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Tarih</th>
+            <th>Soru adı</th>
+            <th>Sonuç</th>
+            <th>Süre</th>
+        </tr>
+        </thead>
+        {% for submission in submissions %}
+            <tr>
+                <td>{{ submission.id }}</td>
+                <td>{{ submission.timestamp }}</td>
+                <td><a href="{{ url_for('problem', slug=submission.problem.slug) }}">{{ submission.problem.title }}</a></td>
+                <td>{{ submission.error }}</td>
+                <td>{{ submission.time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {%- endmacro %}

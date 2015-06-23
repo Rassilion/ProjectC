@@ -74,14 +74,22 @@ def problem_suggestion(slug):
 def author_profile(username):
     author = User.query.filter_by(username=username).first_or_404()
     problems = author.problems
-    return render_template('author_profile.html', title=author.username,author=author, problems=problems)
+    return render_template('author_profile.html', title=author.username, author=author, problems=problems)
+
 
 @app.route('/tag/<name>')
 def tag(name):
     tag = Tag.query.filter_by(name=name).first_or_404()
     problems = tag.problems
-    return render_template('tag.html', title=tag.name,tag=tag, problems=problems)
+    return render_template('tag.html', title=tag.name, tag=tag, problems=problems)
+
+
+@app.route('/user/<username>')
+def user_profile(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    # order submissions by timestamp
+    submissions = user.submissions.order_by(Submission.timestamp.desc())
+    return render_template('user_profile.html', title=user.username, user=user, submissions=submissions)
+
 
 init_admin()
-
-
