@@ -4,7 +4,8 @@
     {%- endwith %}
 {%- endmacro %}
 
-{%- macro horizontal_field(field, label_width=4, field_width=3) %}
+
+{%- macro horizontal_field(field, label_width=3, field_width=4) %}
     <div class="form-group {% if field.errors %}has-error{% endif %}">
         {{ field.label(class="col-sm-" ~ label_width) }}
         <div class="col-sm-{{ field_width }}">
