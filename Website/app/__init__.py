@@ -25,9 +25,8 @@ from utils import wtf
 wtf.add_helpers(app)
 
 # jinja filters
-from utils.filters import datetimeformat, pagepop
+from utils.filters import add_filters
 
-app.jinja_env.filters['datetimeformat'] = datetimeformat
-app.jinja_env.filters['pagepop'] = pagepop
+add_filters(app)
 
 from views import *

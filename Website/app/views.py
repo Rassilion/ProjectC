@@ -112,6 +112,18 @@ problem_column_list = [('id', u'id'), ('title', u'başlık'), ('tags', u'İlgili
 
 
 def sort(model, query, sort_list):
+    """
+    sort query with url args
+
+    :param model:
+    db model name
+    :param query:
+    sql alchemy query
+    :param sort_list:
+    allowed sort url args
+    :return:
+    sorted query if fails return query
+    """
     sort = request.args.get('sort', 'id')
     sort_desc = request.args.get('desc', 0, type=int)
     if sort not in sort_list:
