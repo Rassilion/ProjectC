@@ -16,13 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
-
-    {#<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]>
-    <script src="{{ url_for('static', filename='js/ie8-responsive-file-warning.js') }}"></script><![endif]-->
-    <script src="{{ url_for('static', filename='js/ie-emulation-modes-warning.js') }}"></script>#}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -59,15 +53,14 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-
                     {% if current_user.is_active() %}
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 <span></span>
                                 {{ current_user.username }} olarak giriş yaptınız<strong class="caret"></strong>
                             </a>
 
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" role="menu">
 
                                 <li><a href="{{ url_for('user_profile', username=current_user.username) }}">Profil
                                     sayfanız</a></li>
@@ -81,9 +74,10 @@
                             </ul>
                         </li>
                     {% else %}
-                        <a class="btn btn-success" href="{{ url_for_security('login') }}" role="button">Giriş</a>
-                        <a class="btn btn-success" href="{{ url_for_security('register') }}" role="button">Kayıt
-                            Ol</a>
+                        <li><a class="btn btn-primary" href="{{ url_for_security('login') }}" role="button">Giriş</a>
+                        </li>
+                        <li><a class="btn btn-success" href="{{ url_for_security('register') }}" role="button">Kayıt
+                            Ol</a></li>
                     {% endif %}
                 </ul>
 
@@ -100,18 +94,15 @@
 
 
 
-    <!-- Footer -->
+        <!-- Footer -->
         <footer class="container footer">
-
             <hr style="margin: 5px 1px 0px 0px;">
             <div class="col-md-12">
-
                 <p>Copyright &copy; Project C 2015 - Rendered in {{ g.request_time() }}</p>
             </div>
 
         </footer>
     </div>
-
 </div>
 
 
