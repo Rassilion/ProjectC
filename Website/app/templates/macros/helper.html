@@ -1,26 +1,46 @@
-{% macro problem_list(problems) %}
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>id</th>
-            <th>Soru adı</th>
-            <th>İlgili konular</th>
-            <th>Çözüm sayısı</th>
-            <th>Zorluk</th>
-        </tr>
-        </thead>
-        {% for problem in problems.items %}
+{% macro problem_table_body(problem) %}
             <tr>
                 <td>{{ problem.id }}</td>
-                <td><a class="no-underline" href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
+                <td><a href="{{ url_for('problem', slug=problem.slug) }}">{{ problem.title }}</a></td>
                 <td>{{ problem_tag(problem.tags) }}</td>
                 <td>{{ problem.count }}</td>
                 <td>{{ problem.difficulty }}</td>
             </tr>
+{%- endmacro %}
+{% macro table(table) %}
+    {# get view arguments #}
+    {% set view_args = request.view_args %}
+    {# get optional parameters (after ?) #}
+    {% set sort= request.args %}
+    {# reverse descending option #}
+    {% if sort['desc']=='1' %}{% set desc= 0 %}{% else %}{% set desc=1 %}{% endif %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            {% for col,name in table.column %}
+                {% if col in table.sortable %}
+                    <th>{% if sort['sort'] == col %}
+                        <a href="{{ url_for(request.endpoint,sort=col,desc=desc, **view_args) }}">{{ name }}
+                            {% if sort['desc']=='1' %}
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            {% endif %}
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for(request.endpoint,sort=col, **view_args) }}">{{ name }}</a>
+                    {% endif %}</th>
+                {% else %}
+                    <th>{{ name }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        </thead>
+        {% for row in table.content.items %}
+            {{ problem_table_body(row) }}
         {% endfor %}
     </table>
 {%- endmacro %}
-
 {% macro problem_tag(tags) %}
     {% for tag in tags %}
         <a class="no-underline" href="{{ url_for('tag', name=tag.name) }}">{{ tag.name }}</a>
@@ -42,7 +62,7 @@
             <tr>
                 <td>{{ submission.id }}</td>
                 <td>{{ submission.timestamp }}</td>
-                <td><a class="no-underline" href="{{ url_for('problem', slug=submission.problem.slug) }}">{{ submission.problem.title }}</a>
+                <td><a href="{{ url_for('problem', slug=submission.problem.slug) }}">{{ submission.problem.title }}</a>
                 </td>
                 <td>{{ submission.error }}</td>
                 <td>{{ submission.time }}</td>

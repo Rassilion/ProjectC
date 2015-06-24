@@ -1,10 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import time
+from sqlalchemy import desc
 from forms import *
 from flask.ext.login import login_required
 from flask.ext.security import Security, utils
 from app import app, db
+from app.utils.table import Table
 from flask import request, g, render_template, redirect, url_for, session, send_from_directory
 from models import *
 from admin import init_admin
@@ -47,10 +49,11 @@ def news(slug):
 @app.route('/problems/')
 @app.route('/problems/<int:page>')
 def problem_list(page=1):
-    problems = Problem.query.paginate(
+    problems = sort(Problem, Problem.query, problem_sort_list).paginate(
         page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
-    return render_template('problem_list.html', title='Problem Listesi', problems=problems)
+    problems_table = Table(problem_sort_list, problem_column_list, problems)
+    return render_template('problem_list.html', title='Problem Listesi', problems_table=problems_table)
 
 
 @app.route('/problem/<slug>')
@@ -77,20 +80,22 @@ def problem_suggestion(slug):
 @app.route('/author/<username>/<int:page>')
 def author_profile(username, page=1):
     author = User.query.filter_by(username=username).first_or_404()
-    problems = author.problems.paginate(
+    problems = sort(Problem, author.problems, problem_sort_list).paginate(
         page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
-    return render_template('author_profile.html', title=author.username, author=author, problems=problems)
+    problems_table = Table(problem_sort_list, problem_column_list, problems)
+    return render_template('author_profile.html', title=author.username, author=author, problems_table=problems_table)
 
 
 @app.route('/tag/<name>/')
 @app.route('/tag/<name>/<int:page>')
-def tag(name,page=1):
+def tag(name, page=1):
     tag = Tag.query.filter_by(name=name).first_or_404()
-    problems = tag.problems.paginate(
+    problems = sort(Problem, tag.problems, problem_sort_list).paginate(
         page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
-    return render_template('tag.html', title=tag.name, tag=tag, problems=problems)
+    problems_table = Table(problem_sort_list, problem_column_list, problems)
+    return render_template('tag.html', title=tag.name, tag=tag, problems_table=problems_table)
 
 
 @app.route('/user/<username>')
@@ -99,6 +104,23 @@ def user_profile(username):
     # order submissions by timestamp
     submissions = user.submissions.order_by(Submission.timestamp.desc())
     return render_template('user_profile.html', title=user.username, user=user, submissions=submissions)
+
+
+problem_sort_list = {'id', 'title', 'count', 'difficulty'}
+problem_column_list = [('id', u'id'), ('title', u'başlık'), ('tags', u'İlgili konular'), ('count', u'Çözüm sayısı'), (
+    'difficulty', u'Zorluk')]
+
+
+def sort(model, query, sort_list):
+    sort = request.args.get('sort', 'id')
+    sort_desc = request.args.get('desc', 0, type=int)
+    if sort not in sort_list:
+        return query
+    if sort_desc == 1:
+        return query.order_by(desc(getattr(model, sort)))
+    else:
+        return query.order_by(getattr(model, sort))
+
 
 
 init_admin()

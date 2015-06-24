@@ -8,7 +8,8 @@
             <p>{{ author.bio }}</p>
         </div>
 
-        {{ helper.problem_list(problems) }}
+       {{ helper.table(problems_table) }}
     </div>
-    {{ helper.paginate(problems) }}
+    {{ helper.paginate(problems_table.content) }}
+
 {% endblock %}

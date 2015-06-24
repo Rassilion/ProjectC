@@ -55,7 +55,7 @@ class ImportDB(Command):
                 prob.timestamp = datetime.strptime(md.Meta['date'][0], "%Y-%m-%d")
                 # tag ekle
                 for i in md.Meta['relate']:
-                    tag=models.get_or_create(models.Tag,name=i)
+                    tag = models.get_or_create(models.Tag, name=i)
                     prob.tags.append(tag)
                 # soruya yazar ekle
                 author.problems.append(prob)
@@ -82,3 +82,11 @@ class ImportDB(Command):
 
 if __name__ == "__main__":
     ImportDB.import_db()
+    author = models.User.query.filter_by(username="admin").first()
+    for i in xrange(1, 10000):
+        p = models.Problem(title=unicode(i), body=unicode(i), solution=unicode(i))
+        author.problems.append(p)
+
+        if i % 1000 == 0:
+            db.session.flush()
+    db.session.commit()
