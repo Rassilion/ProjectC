@@ -83,10 +83,13 @@ def author_profile(username, page=1):
     return render_template('author_profile.html', title=author.username, author=author, problems=problems)
 
 
-@app.route('/tag/<name>')
-def tag(name):
+@app.route('/tag/<name>/')
+@app.route('/tag/<name>/<int:page>')
+def tag(name,page=1):
     tag = Tag.query.filter_by(name=name).first_or_404()
-    problems = tag.problems
+    problems = tag.problems.paginate(
+        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+    )
     return render_template('tag.html', title=tag.name, tag=tag, problems=problems)
 
 
