@@ -3,11 +3,10 @@
 import time
 from sqlalchemy import desc
 from forms import *
-from flask.ext.login import login_required
-from flask.ext.security import Security, utils
+from flask.ext.security import roles_accepted,roles_required,login_required,Security, utils,current_user
 from app import app, db
 from app.utils.table import Table
-from flask import request, g, render_template, redirect, url_for, session, send_from_directory
+from flask import request, g, render_template, redirect, url_for, session, send_from_directory, flash
 from models import *
 from admin import init_admin
 
@@ -76,8 +75,8 @@ def problem_suggestion(slug):
     return render_template('problem.html', title=problem.title, problem=problem)
 
 
-@app.route('/author/<username>/')
-@app.route('/author/<username>/<int:page>')
+@app.route('/author/profile/<username>/')
+@app.route('/author/profile/<username>/<int:page>')
 def author_profile(username, page=1):
     author = User.query.filter_by(username=username).first_or_404()
     problems = sort(Problem, author.problems, problem_sort_list).paginate(
@@ -106,6 +105,25 @@ def user_profile(username):
     return render_template('user_profile.html', title=user.username, user=user, submissions=submissions)
 
 
+@app.route('/author/panel/add', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('author','admin')
+def author_panel_add():
+    form = ProblemForm()
+    if form.validate_on_submit():
+        try:
+            newp = Problem(title=form.title.data, body=form.body.data, solution=form.solution.data)
+            newp.tags=form.tags.data
+            db.session.add(newp)
+            current_user.problems.append(newp)
+            db.session.commit()
+            flash(u'Tebrikler Probleminiz eklendi, Problemler sayfasından görebilirsiniz','success')
+        except:
+            db.session.rollback()
+            flash(u'Bir hata oluştu lütfen daha sonra deneyin','error')
+    return render_template('author_panel_add.html',title=u'Yeni soru ekle', form=form)
+
+
 problem_sort_list = {'id', 'title', 'count', 'difficulty'}
 problem_column_list = [('id', u'id'), ('title', u'başlık'), ('tags', u'İlgili konular'), ('count', u'Çözüm sayısı'), (
     'difficulty', u'Zorluk')]
@@ -132,7 +150,6 @@ def sort(model, query, sort_list):
         return query.order_by(desc(getattr(model, sort)))
     else:
         return query.order_by(getattr(model, sort))
-
 
 
 init_admin()
