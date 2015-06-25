@@ -77,3 +77,28 @@
         </div>
     </div>
 {% endmacro %}
+
+{%- macro editor_field(field) %}
+    <div class="form-group {% if field.errors %}has-error{% endif %}">
+        {{ field.label(class="col-sm-12") }}
+        <div class="col-sm-12">
+            {%- if field|is_boolean_field %}
+                <div class="checkbox">
+                    <label>
+                        {{ field(**kwargs)|safe }}
+                    </label>
+                </div>
+            {% else %}
+                {{ field(class="form-control", **kwargs)|safe }}
+            {% endif %}
+        </div>
+
+        {%- if field.errors %}
+            {%- for error in field.errors %}
+                <p class="col-sm-12 help-block">{{ error }}<p>
+            {%- endfor %}
+        {%- elif field.description -%}
+            <span class="help-block">{{ field.description|safe }}</span>
+        {%- endif %}
+    </div>
+{% endmacro %}
