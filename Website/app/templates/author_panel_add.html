@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% set active_page = 2 %}
+
+{% block content %}
+
+    <form class="form-group" method="POST" action="{{ url_for('author_panel_add') }}">
+        {{ form.csrf_token }} {# tokeni unutma formlar için #}
+
+
+        {{ wtf.editor_field(form.title) }}
+        {{ wtf.editor_field(form.tags) }}
+        {{ wtf.editor_field(form.difficulty) }}
+        {{ wtf.editor_field(form.body) }}
+        <div class="editor" id="editor"></div>
+        {{ wtf.editor_field(form.solution) }}
+        <div class="editor" id="editor2"></div>
+        <br>
+        <div class="text-center">
+            <input type="submit" value="Gönder" class="btn btn-success"/>
+        </div>
+    </form>
+    {{ text }}
+{% endblock %}
+{% block js %}
+
+    <script src="{{ url_for('static', filename='js/ace/ace.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ace/mode-markdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ace/mode-c_cpp.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ace/theme-github.js') }}"></script>
+    <script>
+        // ace edit init and config
+        var editor = ace.edit("editor");
+        editor.getSession().setMode("ace/mode/markdown");
+        editor.setTheme("ace/theme/github");
+        // Hook up ACE editor to all textarea with name="body"
+        var textarea = $('textarea[name="body"]').hide();
+        editor.getSession().setValue(textarea.val());
+        editor.getSession().on('change', function () {
+            textarea.val(editor.getSession().getValue());
+        });
+        editor.getSession().setUseWrapMode(true);
+        editor.setOptions({
+            minLines: 20,
+     maxLines: 1000
+});
+    // Hook up ACE editor to all textareas with data-editor attribute
+        var editor2 = ace.edit("editor2");
+        editor2.getSession().setMode("ace/mode/markdown");
+        editor2.setTheme("ace/theme/github");
+        var textarea2 = $('textarea[name="solution"]').hide();
+        editor2.getSession().setValue(textarea2.val());
+        editor2.getSession().on('change', function () {
+            textarea2.val(editor2.getSession().getValue());
+        });
+        editor2.getSession().setUseWrapMode(true);
+        editor2.setOptions({
+            minLines: 20,
+     maxLines: 1000
+});
+    </script>
+{% endblock %}

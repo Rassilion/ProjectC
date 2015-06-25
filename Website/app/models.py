@@ -9,7 +9,7 @@ class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
-    body = db.Column(db.String)
+    body = db.Column(db.UnicodeText)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __init__(self, title=None, body=None):
@@ -41,9 +41,9 @@ class Problem(db.Model):
     title = db.Column(db.String(64), unique=True)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     slug = db.Column(db.String(64), unique=True)
-    body = db.Column(db.String)
-    solution = db.Column(db.String)
-    count = db.Column(db.Integer)
+    body = db.Column(db.UnicodeText)
+    solution = db.Column(db.UnicodeText)
+    count = db.Column(db.Integer, default=0)
     difficulty = db.Column(db.String(64))
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     tags = db.relationship(
@@ -51,17 +51,15 @@ class Problem(db.Model):
         backref=db.backref('problems', lazy='dynamic'))
     submissions = db.relationship('Submission', backref='problem', lazy='dynamic')
 
-    def __init__(self, title=None, author_id=1, body=None, solution=None, count=None,
-                 difficulty=None,timestamp=None):
+    def __init__(self, title=None, body=None, solution=None,
+                 difficulty=None, timestamp=None):
         self.title = title
-        self.author_id = author_id
         self.body = body
         self.solution = solution
-        self.count = count
         self.difficulty = difficulty
         self.slug = slugify(title)
 
-        self.timestamp=timestamp
+        self.timestamp = timestamp
 
     def __unicode__(self):
         return self.title
@@ -88,7 +86,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String)
     username = db.Column(db.String(60), unique=True)
     time_registered = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-    bio = db.Column(db.Text)
+    bio = db.Column(db.UnicodeText)
     avatar = db.Column(db.String(255))
     active = db.Column(db.Boolean)
     roles = db.relationship(
@@ -112,6 +110,7 @@ class Submission(db.Model):
 
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+
 
 def get_or_create(model, **kwargs):
     """SqlAlchemy implementation of Django's get_or_create.

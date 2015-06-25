@@ -88,6 +88,32 @@
     </nav>
 {% endblock %}
 <div class="container main" role="main">
+{% with errors = get_flashed_messages(category_filter=["success"]) %}
+        {% if errors %}
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <ul class="list-unstyled">
+                    {%- for msg in errors %}
+                        <li>{{ msg }}</li>
+                    {% endfor -%}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <ul>
+                    {%- for msg in errors %}
+                        <li>{{ msg }}</li>
+                    {% endfor -%}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
     <div class="row">
         {% block content %}
         {% endblock %}

@@ -83,7 +83,7 @@ class ImportDB(Command):
 if __name__ == "__main__":
     ImportDB.import_db()
     author = models.User.query.filter_by(username="admin").first()
-    for i in xrange(1, 10000):
+    for i in xrange(1, 100):
         p = models.Problem(title=unicode(i), body=unicode(i), solution=unicode(i))
         author.problems.append(p)
 
