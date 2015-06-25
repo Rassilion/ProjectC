@@ -49,8 +49,7 @@ class ImportDB(Command):
                 author = models.User.query.filter_by(username=md.Meta['author'][0]).first()
                 if author is None:
                     author = models.User.query.filter_by(username="admin").first()
-                prob = models.Problem(title=md.Meta['title'][0], body=text, solution=text2,
-                                      count=0)
+                prob = models.Problem(title=md.Meta['title'][0], body=text, solution=text2)
                 # tarihi düzenle
                 prob.timestamp = datetime.strptime(md.Meta['date'][0], "%Y-%m-%d")
                 # tag ekle
