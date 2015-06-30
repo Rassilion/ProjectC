@@ -81,11 +81,3 @@ class ImportDB(Command):
 
 if __name__ == "__main__":
     ImportDB.import_db()
-    author = models.User.query.filter_by(username="admin").first()
-    for i in xrange(1, 100):
-        p = models.Problem(title=unicode(i), body=unicode(i), solution=unicode(i))
-        author.problems.append(p)
-
-        if i % 1000 == 0:
-            db.session.flush()
-    db.session.commit()
