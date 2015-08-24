@@ -115,6 +115,9 @@ class Submission(db.Model):
     successful = db.Column(db.Boolean)
     error = db.Column(db.String(255))
 
+    def __unicode__(self):
+        return str(self.id)
+
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 

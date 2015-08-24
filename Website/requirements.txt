@@ -8,3 +8,4 @@ pygments
 flask-admin
 Flask-Script
 WTForms-Alchemy
+SQLAlchemy-Wrapper
