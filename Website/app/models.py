@@ -110,6 +110,7 @@ class Submission(db.Model):
     problem_id = db.Column(db.Integer, db.ForeignKey('problem.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     time = db.Column(db.Integer)
+    code = db.Column(db.UnicodeText)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     successful = db.Column(db.Boolean)
     error = db.Column(db.String(255))

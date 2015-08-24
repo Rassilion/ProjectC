@@ -3,7 +3,7 @@
 import time
 from sqlalchemy import desc
 from forms import *
-from flask.ext.security import roles_accepted,roles_required,login_required,Security, utils,current_user
+from flask.ext.security import roles_accepted, roles_required, login_required, Security, utils, current_user
 from app import app, db
 from app.utils.table import Table
 from flask import request, g, render_template, redirect, url_for, session, send_from_directory, flash
@@ -12,6 +12,7 @@ from admin import init_admin
 
 # initilize flask-security
 security = Security(app, user_datastore, register_form=ExtendedRegisterForm)
+
 
 # page render time
 @app.before_request
@@ -55,10 +56,21 @@ def problem_list(page=1):
     return render_template('problem_list.html', title='Problem Listesi', problems_table=problems_table)
 
 
-@app.route('/problem/<slug>')
+@app.route('/problem/<slug>', methods=['GET', 'POST'])
 def problem(slug):
     problem = Problem.query.filter_by(slug=slug).first_or_404()
-    return render_template('problem.html', title=problem.title, problem=problem)
+    form = SubmissionForm()
+
+    if form.validate_on_submit():
+        try:
+            newS = Submission(problem_id=problem.id, user_id=current_user.id, code=form.code.data)
+            db.session.add(newS)
+            db.session.commit()
+            flash(u'Tebrikler kodunuz eklendi, kodlarım sayfasından görebilirsiniz', 'success')
+        except:
+            db.session.rollback()
+            flash(u'Bir hata oluştu lütfen daha sonra deneyin', 'error')
+    return render_template('problem.html', title=problem.title, problem=problem, form=form)
 
 
 @app.route('/problem/<slug>/solution')
@@ -107,21 +119,21 @@ def user_profile(username):
 
 @app.route('/author/panel/add', methods=['GET', 'POST'])
 @login_required
-@roles_accepted('author','admin')
+@roles_accepted('author', 'admin')
 def author_panel_add():
     form = ProblemForm()
     if form.validate_on_submit():
         try:
             newp = Problem(title=form.title.data, body=form.body.data, solution=form.solution.data)
-            newp.tags=form.tags.data
+            newp.tags = form.tags.data
             db.session.add(newp)
             current_user.problems.append(newp)
             db.session.commit()
-            flash(u'Tebrikler Probleminiz eklendi, Problemler sayfasından görebilirsiniz','success')
+            flash(u'Tebrikler Probleminiz eklendi, Problemler sayfasından görebilirsiniz', 'success')
         except:
             db.session.rollback()
-            flash(u'Bir hata oluştu lütfen daha sonra deneyin','error')
-    return render_template('author_panel_add.html',title=u'Yeni soru ekle', form=form)
+            flash(u'Bir hata oluştu lütfen daha sonra deneyin', 'error')
+    return render_template('author_panel_add.html', title=u'Yeni soru ekle', form=form)
 
 
 problem_sort_list = {'id', 'title', 'count', 'difficulty'}

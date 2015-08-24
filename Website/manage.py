@@ -23,5 +23,3 @@ manager.add_command('remove_role', RemoveRoleCommand())
 manager.add_command('deactivate_user', DeactivateUserCommand())
 manager.add_command('activate_user', ActivateUserCommand())
 
-if __name__ == "__main__":
-    manager.run()

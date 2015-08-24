@@ -79,7 +79,7 @@
 {% endmacro %}
 
 {%- macro editor_field(field) %}
-    <div class="form-group {% if field.errors %}has-error{% endif %}">
+    <div class="form-group {% if field.errors %}has-error{% endif %}" id="{{ field.label.text }}">
         {{ field.label(class="col-sm-12") }}
         <div class="col-sm-12">
             {%- if field|is_boolean_field %}

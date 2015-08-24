@@ -10,21 +10,28 @@
                         becerecem
                         listesine ekle</a></small></h1>
                 {% endif %}
-            <h5>Yazar: <a href="{{ url_for('author_profile',username=problem.author) }}">{{ problem.author }}</a> Tarih: {{ problem.timestamp|datetimeformat }}</h5>
+            <h5>Yazar: <a href="{{ url_for('author_profile',username=problem.author) }}">{{ problem.author }}</a>
+                Tarih: {{ problem.timestamp|datetimeformat }}</h5>
         </div>
     </div>
     <div class="col-sm-8">
         {{ problem.body|markdown }}
+        {% if current_user.is_active() %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Editör</h3>
+                </div>
+                <form class="form-group" method="POST" action="{{ url_for('problem',slug=problem.slug) }}">
+                    {{ form.csrf_token }}
+                    {{ wtf.editor_field(form.code) }}
+                    <div class="editor" id="editor"></div>
+                    <div class="text-center">
+                        <input type="submit" value="Gönder" class="btn btn-success"/>
+                    </div>
+                </form>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Editör</h3>
             </div>
-            <div class="panel-body" id="editor">
-                kod
-            </div>
-
-        </div>
+        {% endif %}
     </div>
 
     <div class="col-sm-4 well">
@@ -45,4 +52,30 @@
 
 
     <!-- /container -->
+{% endblock %}
+{% block js %}
+    {% if current_user.is_active() %}
+        <script src="{{ url_for('static', filename='js/ace/ace.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ace/mode-markdown.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ace/mode-c_cpp.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ace/theme-github.js') }}"></script>
+        <script>
+            // ace edit init and config
+            var editor = ace.edit("editor");
+            editor.getSession().setMode("ace/mode/markdown");
+            editor.setTheme("ace/theme/github");
+            // Hook up ACE editor to all textarea with name="body"
+            $('#code').hide();
+            var textarea = $('textarea[name="code"]').hide();
+            editor.getSession().setValue(textarea.val());
+            editor.getSession().on('change', function () {
+                textarea.val(editor.getSession().getValue());
+            });
+            editor.getSession().setUseWrapMode(true);
+            editor.setOptions({
+                minLines: 20,
+                maxLines: 1000
+            });
+        </script>
+    {% endif %}
 {% endblock %}
