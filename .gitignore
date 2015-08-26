@@ -56,4 +56,5 @@ docs
 target/
 
 .idea/
-Website/app.db
+.vagrant/
+app.db
