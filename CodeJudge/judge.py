@@ -1,5 +1,5 @@
 from models import Submission
-from CodeJudge import db
+from codejudge import db
 
 print db.query(Submission).all()
 p=db.query(Submission).filter_by(error=None).first()

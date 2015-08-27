@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from app import db
-from app import models
+from website import db
+from website import models
 from flask.ext.script import Command
 
 

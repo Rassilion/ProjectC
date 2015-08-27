@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from app import db
+from website import db
 from flask.ext.security import UserMixin, RoleMixin, SQLAlchemyUserDatastore
 import datetime
 from slugify import slugify

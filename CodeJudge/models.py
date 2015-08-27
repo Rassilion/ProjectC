@@ -1,5 +1,5 @@
 import datetime
-from CodeJudge import db
+from codejudge import db
 
 
 # basic Submission table no Foreign references

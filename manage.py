@@ -3,9 +3,9 @@ from flask.ext.script.commands import Server, Shell, ShowUrls, Clean
 from flask.ext.security.script import CreateUserCommand, AddRoleCommand, \
     RemoveRoleCommand, ActivateUserCommand, DeactivateUserCommand
 
-from app import app
-from app.script import ResetDB, PopulateDB
-from Problems.import_db import ImportDB
+from website import app
+from website.script import ResetDB, PopulateDB
+from problems.import_db import ImportDB
 
 manager = Manager(app)
 manager.add_command("shell", Shell())

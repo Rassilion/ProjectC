@@ -1,7 +1,7 @@
 from flask.ext.admin.contrib.sqla import ModelView
 from flask.ext.admin import Admin
 from flask.ext.security import current_user,utils
-from app import app,db
+from website import app,db
 from models import User, Role, News, Problem , Tag,Submission
 from wtforms.fields import TextField
 

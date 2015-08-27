@@ -4,9 +4,9 @@ import codecs
 import os
 import errno
 from datetime import datetime
-from app import db
-from app import models
-from app.config import Config
+from website import db
+from website import models
+from website.config import Config
 from shutil import copy
 import markdown
 from flask.ext.script import Command
@@ -53,8 +53,8 @@ class ImportDB(Command):
                 # tarihi düzenle
                 prob.timestamp = datetime.strptime(md.Meta['date'][0], "%Y-%m-%d")
                 # tag ekle
-                for i in md.Meta['relate']:
-                    tag = models.get_or_create(models.Tag, name=i)
+                for ji in md.Meta['relate']:
+                    tag = models.get_or_create(models.Tag, name=j)
                     prob.tags.append(tag)
                 # soruya yazar ekle
                 author.problems.append(prob)

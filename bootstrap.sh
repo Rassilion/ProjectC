@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get update
+sudo apt-get -q update
 sudo apt-get -y -q install python-dev build-essential python-pip
 
 
@@ -13,7 +13,16 @@ sudo su postgres -c "psql -c \"CREATE ROLE vagrant SUPERUSER LOGIN PASSWORD 'sup
 # create database 'mynewdb' for role (superuser) vagrant
 
 #echo >&2 "===CUSTOM-MSG=== Create db"
-sudo su postgres -c "createdb -E UTF8 -T template0 --locale=en_US.utf8 -O vagrant projectc"
+sudo su postgres -c "createdb -E UTF8 -T template0 --locale=en_US.utf8 -O vagrant website"
+
+#Replace .profile with .bashrc if required
+source ~/.bashrc
+if [ -z "$DATABASE_URL" ]; then # only checks if VAR is set, regardless of its value
+    echo "export DATABASE_URL=postgresql://vagrant:superpass@localhost:5432/website" >> ~/.bashrc
+fi
+if [ -z "$PYTHONPATH" ]; then # only checks if VAR is set, regardless of its value
+    echo "export PYTHONPATH="/vagrant"" >> ~/.bashrc
+fi
 
 # enable the db to listen from the host through tcp
 sudo su postgres -c "printf \"\n\n# === CUSTOM VAGRANT SETTINGS === \n \" >> /etc/postgresql/*/main/postgresql.conf"

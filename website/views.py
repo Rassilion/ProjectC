@@ -4,8 +4,8 @@ import time
 from sqlalchemy import desc
 from forms import *
 from flask.ext.security import roles_accepted, roles_required, login_required, Security, utils, current_user
-from app import app, db
-from app.utils.table import Table
+from website import app, db
+from website.utils.table import Table
 from flask import request, g, render_template, redirect, url_for, session, send_from_directory, flash
 from models import *
 from admin import init_admin

@@ -9,3 +9,4 @@ flask-admin
 Flask-Script
 WTForms-Alchemy
 SQLAlchemy-Wrapper
+psycopg2
