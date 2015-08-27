@@ -38,7 +38,7 @@ if [ -z "$DATABASE_URL" ]; then # only checks if VAR is set, regardless of its v
     echo "export DATABASE_URL=postgresql://vagrant:superpass@localhost:5432/website" >> ~/.bashrc
 fi
 if [ -z "$PYTHONPATH" ]; then # only checks if VAR is set, regardless of its value
-    echo "export PYTHONPATH="/var/www/projectc/"" >> ~/.bashrc
+    echo "export PYTHONPATH=/var/www/projectc:$PYTHONPATH" >> ~/.bashrc
 fi
 echo"DATABASE_URL=postgresql://vagrant:superpass@localhost:5432/website" >> /etc/environment
 
