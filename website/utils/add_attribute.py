@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from markdown.treeprocessors import Treeprocessor
-from markdown.extensions import Extension
+from markdown import Extension
 
 
 class AddAttributeTreeprocessor(Treeprocessor):
