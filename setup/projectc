@@ -1,0 +1,22 @@
+server {
+        listen          80;
+        server_name     $hostname;
+        access_log /var/www/projectc/logs/access.log;
+        error_log /var/www/projectc/logs/error.log;
+
+        location / {
+            #uwsgi_pass      127.0.0.1:9001;
+            uwsgi_pass      unix:///run/uwsgi/app/projectc/projectc.socket;
+            include         uwsgi_params;
+            uwsgi_param     UWSGI_SCHEME $scheme;
+            uwsgi_param     SERVER_SOFTWARE    nginx/$nginx_version;
+
+        }
+
+        location /static/ {
+            alias   /var/www/projectc/website/static/;
+            autoindex off;
+
+        }
+
+}
