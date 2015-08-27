@@ -16,12 +16,14 @@ extension_configs = {
 
         }
 }
-Markdown(app, extensions=['extra', 'codehilite'], output_format='html5', extension_configs=extension_configs)
+Markdown(app, extensions=['extra', 'codehilite', 'website.utils.add_attribute'], output_format='html5',
+         extension_configs=extension_configs)
 
 errors.init_app(app)
 
 #  Logging
 import logging
+
 logging.basicConfig(
     level=app.config['LOG_LEVEL'],
     format='%(asctime)s %(levelname)s: %(message)s '
@@ -33,6 +35,7 @@ logging.basicConfig(
 #  Email on errors
 if not app.debug and not app.testing:
     import logging.handlers
+
     mail_handler = logging.handlers.SMTPHandler(
         'localhost',
         os.getenv('USER'),
@@ -56,6 +59,7 @@ else:
 
 # Email
 from flask.ext.mail import Mail
+
 app.mail = Mail(app)
 
 # WTForms helpers
