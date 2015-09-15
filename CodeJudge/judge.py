@@ -5,13 +5,11 @@ import os
 import config
 import sys
 from subprocess32 import PIPE
-from CodeJudge import p,db
+from CodeJudge import p, db
 from models import Submission
 import time
 
-
-
-
+# TODO: get test cases from db
 testcases = [['14 \n5 9 4 19 11 17 12 13 14 1 16 20 15 6 \n', '2  \r\n 3    \n \t 7  \n  8 10  \n  18 \n'],
              ['1 \n8 \n', '1 2 3 4 5 6 7 9 10 11 12 13 14 15 16 17 18 19 20 \n'],
              ['17 \n5 1 3 12 11 4 20 15 14 13 6 18 17 2 16 7 9 \n', '8 10 19 \n'],
@@ -136,6 +134,7 @@ def compile(code):
 
     if e:
         print "comp error", e, p.returncode
+        print "--------"
 
 
 def execute(exe, inp):
@@ -155,35 +154,45 @@ def execute(exe, inp):
 
 def test(testcases, code):
     compile(code)
-    count = 0
+    count = 1
+    err = ""
     for test in testcases:
-        sys.stdout.flush();
+        sys.stdout.flush()
         t, out, ti = execute(d, test[0])
+        # TODO:  dont look other testcases when error
         if t == 124:
-            print "Time Limit Exceeded - Process killed."
+            err = "TLE"
         elif t == 139:
-            print "SIGSEGV||Segmentation fault (core dumped)"
+            err = "SIGSEGV"
         elif t == 136:
-            print "SIGFPE||Floating point exception"
+            err = "SIGFPE"
         elif t == 134:
-            print "SIGABRT||Aborted"
-        else:
-            # print "out: "+repr(out)+" time: "+str(ti)+" " +str(out==test[1])+" return code: "+str(t)
+            err = "SIGABRT"
+        elif t == 0:
             if outputFormatter(out) == outputFormatter(test[1]):
-                count += 1
-    print str(count) + "/" + str(len(testcases))
+                err = "SUCCESS"
+            else:
+                err = "TE" + str(count)
+        else:
+            err = "COMPERROR"
+        count += 1
+    return err, ti
 
 
-
-
+# TODO: better listener
 while True:
     message = p.get_message()
     if message:
-        sid= message['data']
-        submission= db.query(Submission).filter_by(id=sid).first()
-        s=submission.code
+        sid = message['data']
+        submission = db.query(Submission).filter_by(id=sid).first()
+        s = submission.code.encode('utf-8')
         d = os.path.join(config.submissiondir, sid)
-        test(testcases, s)
+        err, ti = test(testcases, s)
+        submission.error = err
+        submission.time = ti
+        print ti
+        #TODO: db error handling
+        db.commit()
         print message['data']
 
-    time.sleep(0.001)  # be nice to the system :)
+    time.sleep(1)  # be nice to the system :)

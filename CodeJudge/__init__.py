@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 from sqlalchemy_wrapper import SQLAlchemy
 from config import *
 from redis import StrictRedis
