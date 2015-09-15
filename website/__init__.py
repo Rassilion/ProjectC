@@ -4,6 +4,11 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from config import Config
 from flaskext.markdown import Markdown
 import errors
+from redis import StrictRedis
+
+
+# redis client
+r = StrictRedis(host='localhost', port=6379, db=0)
 
 app = Flask(__name__)
 app.config.from_object(Config)

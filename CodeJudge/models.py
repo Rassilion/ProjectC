@@ -1,5 +1,5 @@
 import datetime
-from codejudge import db
+from CodeJudge import db
 
 
 # basic Submission table no Foreign references
@@ -16,3 +16,5 @@ class Submission(db.Model):
 
     def __repr__(self):
         return str(self.id)
+
+

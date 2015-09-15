@@ -4,7 +4,7 @@ import time
 from sqlalchemy import desc
 from forms import *
 from flask.ext.security import roles_accepted, roles_required, login_required, Security, utils, current_user
-from website import app, db
+from website import app, db, r
 from website.utils.table import Table
 from flask import request, g, render_template, redirect, url_for, session, send_from_directory, flash
 from models import *
@@ -66,6 +66,8 @@ def problem(slug):
             newS = Submission(problem_id=problem.id, user_id=current_user.id, code=form.code.data)
             db.session.add(newS)
             db.session.commit()
+            # publish to redis
+            r.publish('submissions',str(newS.id))
             flash(u'Tebrikler kodunuz eklendi, kodlarım sayfasından görebilirsiniz', 'success')
         except:
             db.session.rollback()
