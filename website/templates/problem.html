@@ -4,7 +4,7 @@
     <div class="col-sm-12">
         <div class="page-header">
             <h1>{{ problem.title }} <span class="badge">{{ problem.count }}</span>
-                {% if current_user.is_active %}
+                {% if current_user.is_active() %}
                     <small><a class="small"
                               href="{{ url_for('problem_solution',slug=problem.slug) }}">Şimdilik beceremedim ama ilerde
                         becerecem
@@ -16,7 +16,7 @@
     </div>
     <div class="col-sm-8">
         {{ problem.body|markdown }}
-        {% if current_user.is_active %}
+        {% if current_user.is_active() %}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Editör</h3>
@@ -36,7 +36,7 @@
 
     <div class="col-sm-4 well">
         <div class="container-fluid">
-            {% if current_user.is_active %}
+            {% if current_user.is_active() %}
                 <div class="row"><h3><span class="label label-success">Çözüldü</span>
                     <span class="label label-danger">Hatalı</span</h3></div>
                 <div class="row"><p>Eski kodlar: </p></div>
@@ -54,7 +54,7 @@
     <!-- /container -->
 {% endblock %}
 {% block js %}
-    {% if current_user.is_active %}
+    {% if current_user.is_active() %}
         <script src="{{ url_for('static', filename='js/ace/ace.js') }}"></script>
         <script src="{{ url_for('static', filename='js/ace/mode-markdown.js') }}"></script>
         <script src="{{ url_for('static', filename='js/ace/mode-c_cpp.js') }}"></script>
