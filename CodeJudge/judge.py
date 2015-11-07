@@ -8,6 +8,7 @@ from subprocess32 import PIPE
 from CodeJudge import p, db
 from models import Submission
 import time
+from exceptions import CompileError
 
 # TODO: get test cases from db
 testcases = [['14 \n5 9 4 19 11 17 12 13 14 1 16 20 15 6 \n', '2  \r\n 3    \n \t 7  \n  8 10  \n  18 \n'],
@@ -118,7 +119,7 @@ def outputFormatter(out):
     out = out.replace("\t", " ")
     outputList = out.split(" ")
     i = 0
-    while (i < len(outputList)):
+    while i < len(outputList):
         if outputList[i] == "":
             outputList.pop(i)
             continue
@@ -133,8 +134,7 @@ def compile(code):
     o, e = p.communicate(code)
 
     if e:
-        print "comp error", e, p.returncode
-        print "--------"
+        raise CompileError
 
 
 def execute(exe, inp):
@@ -153,30 +153,34 @@ def execute(exe, inp):
 
 
 def test(testcases, code):
-    compile(code)
-    count = 1
-    err = ""
-    for test in testcases:
-        sys.stdout.flush()
-        t, out, ti = execute(d, test[0])
-        # TODO:  dont look other testcases when error
-        if t == 124:
-            err = "TLE"
-        elif t == 139:
-            err = "SIGSEGV"
-        elif t == 136:
-            err = "SIGFPE"
-        elif t == 134:
-            err = "SIGABRT"
-        elif t == 0:
-            if outputFormatter(out) == outputFormatter(test[1]):
-                err = "SUCCESS"
-            else:
-                err = "TE" + str(count)
-        else:
-            err = "COMPERROR"
-        count += 1
-    return err, ti
+    try:
+        compile(code)
+        count = 1
+        err = ""
+        for test in testcases:
+            sys.stdout.flush()
+            t, out, ti = execute(d, test[0])
+            if t == 124:
+                err = "TLE"
+                break
+            elif t == 139:
+                err = "SIGSEGV"
+                break
+            elif t == 136:
+                err = "SIGFPE"
+                break
+            elif t == 134:
+                err = "SIGABRT"
+                break
+            elif t == 0:
+                if outputFormatter(out) == outputFormatter(test[1]):
+                    err = "SUCCESS"
+                else:
+                    err = "TE" + str(count)
+            count += 1
+        return err, ti
+    except CompileError:
+        return "COMPILER",0
 
 
 # TODO: better listener
