@@ -61,7 +61,7 @@
         {% for submission in submissions %}
             <tr>
                 <td>{{ submission.id }}</td>
-                <td>{{ submission.timestamp }}</td>
+                <td><a href="{{ url_for('user_submission', id=submission.id) }}">{{ submission.timestamp }}</a></td>
                 <td><a href="{{ url_for('problem', slug=submission.problem.slug) }}">{{ submission.problem.title }}</a>
                 </td>
                 <td>{{ submission.error }}</td>

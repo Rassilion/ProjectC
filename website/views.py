@@ -50,7 +50,7 @@ def news(slug):
 @app.route('/problems/<int:page>')
 def problem_list(page=1):
     problems = sort(Problem, Problem.query, problem_sort_list).paginate(
-        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+            page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
     problems_table = Table(problem_sort_list, problem_column_list, problems)
     return render_template('problem_list.html', title='Problem Listesi', problems_table=problems_table)
@@ -67,7 +67,7 @@ def problem(slug):
             db.session.add(newS)
             db.session.commit()
             # publish to redis
-            r.publish('submissions',str(newS.id))
+            r.publish('submissions', str(newS.id))
             flash(u'Tebrikler kodunuz eklendi, kodlarım sayfasından görebilirsiniz', 'success')
         except:
             db.session.rollback()
@@ -94,7 +94,7 @@ def problem_suggestion(slug):
 def author_profile(username, page=1):
     author = User.query.filter_by(username=username).first_or_404()
     problems = sort(Problem, author.problems, problem_sort_list).paginate(
-        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+            page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
     problems_table = Table(problem_sort_list, problem_column_list, problems)
     return render_template('author_profile.html', title=author.username, author=author, problems_table=problems_table)
@@ -105,7 +105,7 @@ def author_profile(username, page=1):
 def tag(name, page=1):
     tag = Tag.query.filter_by(name=name).first_or_404()
     problems = sort(Problem, tag.problems, problem_sort_list).paginate(
-        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+            page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
     problems_table = Table(problem_sort_list, problem_column_list, problems)
     return render_template('tag.html', title=tag.name, tag=tag, problems_table=problems_table)
@@ -117,6 +117,15 @@ def user_profile(username):
     # order submissions by timestamp
     submissions = user.submissions.order_by(Submission.timestamp.desc())
     return render_template('user_profile.html', title=user.username, user=user, submissions=submissions)
+
+
+@login_required
+@app.route('/submission/<int:id>')
+def user_submission(id):
+    submission = Submission.query.filter_by(id=id).first_or_404()
+    # TODO jinja filter for this
+    code = u"~~~~{.c}\n" + submission.code + u"\n~~~~"
+    return render_template('user_submission.html', title=u"Submiision", submission=submission, code=code)
 
 
 @app.route('/author/panel/add', methods=['GET', 'POST'])
