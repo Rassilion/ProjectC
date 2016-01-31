@@ -6,9 +6,9 @@ import config
 import sys
 from subprocess32 import PIPE
 from CodeJudge import p, db
-from models import Submission
+from CodeJudge.models import Submission
 import time
-from exceptions import CompileError
+from CodeJudge.exceptions import CompileError
 
 # TODO: get test cases from db
 testcases = [['14 \n5 9 4 19 11 17 12 13 14 1 16 20 15 6 \n', '2  \r\n 3    \n \t 7  \n  8 10  \n  18 \n'],
@@ -112,6 +112,12 @@ testcases = [['14 \n5 9 4 19 11 17 12 13 14 1 16 20 15 6 \n', '2  \r\n 3    \n \
              ['8 \n18 14 5 13 12 3 19 6 \n', '1 2 4 7 8 9 10 11 15 16 17 20 \n'],
              ['12 \n7 9 6 1 20 16 10 14 8 15 12 4 \n', '2 3 5 11 13 17 18 19 \n']]
 
+def ensure_dir(f):
+    try:
+        os.makedirs(f)
+    except OSError:
+        if not os.path.isdir(f):
+            raise
 
 def outputFormatter(out):
     out = out.replace("\n", " ")
@@ -134,21 +140,20 @@ def compile(code):
     o, e = p.communicate(code)
 
     if e:
+        print e
         raise CompileError
 
 
 def execute(exe, inp):
-    cmd = exe
+    cmd = "timeout 10s "+exe
     try:
         start = time.time()
         p = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE, bufsize=1, shell=True)
-        outs, errs = p.communicate(inp, timeout=10)
+        outs, errs = p.communicate(inp)
         stop = time.time()
         ti = stop - start
         return p.returncode, outs, ti
     except subprocess.TimeoutExpired:
-        p.kill()
-        p.communicate()
         return 124, "", -1
 
 
@@ -160,6 +165,7 @@ def test(testcases, code):
         for test in testcases:
             sys.stdout.flush()
             t, out, ti = execute(d, test[0])
+            err=t
             if t == 124:
                 err = "TLE"
                 break
@@ -184,6 +190,8 @@ def test(testcases, code):
 
 
 # TODO: better listener
+print "start"
+ensure_dir("submissions")
 while True:
     message = p.get_message()
     if message:
