@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
 sudo apt-get -q update
-sudo apt-get -y -q install python-dev build-essential python-pip
+sudo apt-get -y -q install python-dev build-essential python-pip libffi-dev postgresql-client libpq-dev libffi-dev
 
 sudo apt-get -y install nginx-full
 
 # install uwsgi
 sudo apt-get -y install python-dev build-essential python-pip uwsgi uwsgi-plugin-python
+
+mkdir /var/www/projectc/logs/
+touch /var/www/projectc/logs/access.log
+touch /var/www/projectc/logs/error.log
 
 sudo rm /etc/nginx/sites-enabled/default
 
@@ -51,4 +55,12 @@ sudo su postgres -c "echo \" host    all             all             10.0.2.2/24
 #restart
 sudo /etc/init.d/postgresql restart
 
+sudo chown -R vagrant:www-data /var/www/
+
+sudo pip install virtualenv
+virtualenv /var/www/env
+source /var/www/env/bin/activate
 pip install -r /var/www/projectc/requirements.txt
+
+sudo service nginx restart
+sudo service uwsgi restart
