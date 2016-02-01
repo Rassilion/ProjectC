@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import codecs
 import subprocess32 as subprocess
 import os
 import config
@@ -112,12 +113,29 @@ testcases = [['14 \n5 9 4 19 11 17 12 13 14 1 16 20 15 6 \n', '2  \r\n 3    \n \
              ['8 \n18 14 5 13 12 3 19 6 \n', '1 2 4 7 8 9 10 11 15 16 17 20 \n'],
              ['12 \n7 9 6 1 20 16 10 14 8 15 12 4 \n', '2 3 5 11 13 17 18 19 \n']]
 
+
 def ensure_dir(f):
     try:
         os.makedirs(f)
     except OSError:
         if not os.path.isdir(f):
             raise
+
+
+# File Read/Write Functions
+def file_read(filename):
+    if not os.path.exists(filename): return ""
+    f = codecs.open(filename, "r", "utf-8")
+    d = f.read()
+    f.close()
+    return d.replace("\r", "")
+
+
+def file_write(filename, data):
+    f = codecs.open(filename, "w", "utf-8")
+    f.write(data.replace("\r", ""))
+    f.close()
+
 
 def outputFormatter(out):
     out = out.replace("\n", " ")
@@ -134,77 +152,94 @@ def outputFormatter(out):
     return " ".join(outputList)
 
 
-def compile(code):
-    cmd = "gcc -o " + d + " -x c -"
-    p = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE, bufsize=1, shell=True)
+def compile(code, exe):
+    cmd = "gcc -o " + exe + " -x c -"
+    p = subprocess.Popen(cmd, stdin=PIPE, stdout=None, stderr=PIPE, bufsize=1, shell=True)
     o, e = p.communicate(code)
-
     if e:
         print e
         raise CompileError
 
 
-def execute(exe, inp):
-    cmd = "timeout 10s "+exe
-    try:
-        start = time.time()
-        p = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE, bufsize=1, shell=True)
-        outs, errs = p.communicate(inp)
-        stop = time.time()
-        ti = stop - start
-        return p.returncode, outs, ti
-    except subprocess.TimeoutExpired:
-        return 124, "", -1
+def execute(exe, inp, out):
+    # run exe using gnu coreutils timeout
+    cmd = "timeout 5s " + exe + " 1>" + out
+    start = time.time()
+    # pipe input
+    p = subprocess.Popen(cmd, stdin=PIPE, stdout=None, stderr=None, bufsize=1, shell=True)
+    p.communicate(inp)
+    stop = time.time()
+    ti = stop - start
+    return p.returncode, ti
 
 
 def test(testcases, code):
     try:
-        compile(code)
+        # compile code
+        compile(code, exe)
         count = 1
-        err = ""
+        error_name = ""
+        # start test
+        time = 0
         for test in testcases:
+            # define output file
+            output_file = exe + ".txt"
+            # ? flush pipe
             sys.stdout.flush()
-            t, out, ti = execute(d, test[0])
-            err=t
-            if t == 124:
-                err = "TLE"
+            exit_code, ti = execute(exe, test[0], output_file)
+            # if error not known return exit code
+            error_name = exit_code
+            if exit_code == 124:
+                error_name = "TLE"
                 break
-            elif t == 139:
-                err = "SIGSEGV"
+            elif exit_code == 139:
+                error_name = "SIGSEGV"
                 break
-            elif t == 136:
-                err = "SIGFPE"
+            elif exit_code == 136:
+                error_name = "SIGFPE"
                 break
-            elif t == 134:
-                err = "SIGABRT"
+            elif exit_code == 134:
+                error_name = "SIGABRT"
                 break
-            elif t == 0:
-                if outputFormatter(out) == outputFormatter(test[1]):
-                    err = "SUCCESS"
+            elif exit_code == 0:
+                # limit output to 5 mb
+                if os.path.getsize(output_file) > 5000000:
+                    error_name = "Big Output" + str(count)
+                    break
                 else:
-                    err = "TE" + str(count)
+                    # read output file from disk
+                    out = file_read(output_file)
+                    # format outputs and compare them
+                    if outputFormatter(out) == outputFormatter(test[1]):
+                        error_name = "SUCCESS"
+                        time += ti
+                    else:
+                        error_name = "TE" + str(count)
             count += 1
-        return err, ti
+        return error_name, "%.3f" % time
     except CompileError:
-        return "COMPILER",0
+        return "COMPILER", 0
 
 
 # TODO: better listener
 print "start"
 ensure_dir("submissions")
 while True:
+    # get new submission id from redis
     message = p.get_message()
     if message:
         sid = message['data']
+        print sid
+        # get submission data from database
         submission = db.query(Submission).filter_by(id=sid).first()
         s = submission.code.encode('utf-8')
-        d = os.path.join(config.submissiondir, sid)
+        dir = os.path.join(config.submissiondir, sid)
+        exe = dir
         err, ti = test(testcases, s)
         submission.error = err
         submission.time = ti
         print ti
-        #TODO: db error handling
+        # TODO: db error handling
         db.commit()
-        print message['data']
 
     time.sleep(1)  # be nice to the system :)

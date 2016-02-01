@@ -109,7 +109,7 @@ class Submission(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     problem_id = db.Column(db.Integer, db.ForeignKey('problem.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    time = db.Column(db.Integer)
+    time = db.Column(db.Float)  # TODO string or float?
     code = db.Column(db.UnicodeText)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     successful = db.Column(db.Boolean)

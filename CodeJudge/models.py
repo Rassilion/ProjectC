@@ -10,7 +10,7 @@ class Submission(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     problem_id = db.Column(db.Integer)
     user_id = db.Column(db.Integer)
-    time = db.Column(db.Integer)
+    time = db.Column(db.Float)
     code = db.Column(db.UnicodeText)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     successful = db.Column(db.Boolean)
@@ -18,5 +18,3 @@ class Submission(db.Model):
 
     def __repr__(self):
         return str(self.id)
-
-
