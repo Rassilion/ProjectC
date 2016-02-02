@@ -3,9 +3,11 @@ from website import db
 from flask.ext.security import UserMixin, RoleMixin, SQLAlchemyUserDatastore
 import datetime
 from slugify import slugify
+from sqlalchemy.dialects import postgresql
 
 
 class News(db.Model):
+    __tablename__ = 'news'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     slug = db.Column(db.String(64), unique=True)
@@ -28,6 +30,7 @@ tags_problems = db.Table(
 
 
 class Tag(db.Model, RoleMixin):
+    __tablename__ = 'tag'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
     description = db.Column(db.String)
@@ -37,6 +40,7 @@ class Tag(db.Model, RoleMixin):
 
 
 class Problem(db.Model):
+    __tablename__ = 'problem'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), unique=True)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -50,6 +54,7 @@ class Problem(db.Model):
         'Tag', secondary=tags_problems,
         backref=db.backref('problems', lazy='dynamic'))
     submissions = db.relationship('Submission', backref='problem', lazy='dynamic')
+    test_cases = db.Column(postgresql.ARRAY(db.String))
 
     def __init__(self, title=None, body=None, solution=None,
                  difficulty=None, timestamp=None):
@@ -81,6 +86,7 @@ class Role(db.Model, RoleMixin):
 
 
 class User(db.Model, UserMixin):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
@@ -106,6 +112,7 @@ class User(db.Model, UserMixin):
 
 
 class Submission(db.Model):
+    __tablename__ = 'submission'
     id = db.Column(db.Integer, primary_key=True)
     problem_id = db.Column(db.Integer, db.ForeignKey('problem.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
