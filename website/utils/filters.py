@@ -24,7 +24,10 @@ def pagepop(value):
         pass
     return value
 
+def markdowncode(code):
+    return u"~~~~{.c}\n" + code + u"\n~~~~"
 
 def add_filters(app):
     app.jinja_env.filters['datetimeformat'] = datetimeformat
     app.jinja_env.filters['pagepop'] = pagepop
+    app.jinja_env.filters['markdowncode'] = markdowncode

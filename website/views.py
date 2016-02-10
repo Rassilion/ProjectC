@@ -123,9 +123,7 @@ def user_profile(username):
 @app.route('/submission/<int:id>')
 def user_submission(id):
     submission = Submission.query.filter_by(id=id).first_or_404()
-    # TODO jinja filter for this
-    code = u"~~~~{.c}\n" + submission.code + u"\n~~~~"
-    return render_template('user_submission.html', title=u"Submiision", submission=submission, code=code)
+    return render_template('user_submission.html', title=u"Submision", submission=submission)
 
 
 @app.route('/author/panel/add', methods=['GET', 'POST'])
