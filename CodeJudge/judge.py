@@ -12,30 +12,50 @@ import time
 from CodeJudge.exceptions import CompileError
 
 
-def ensure_dir(f):
+def ensure_dir(path):
+    """
+    create dir if not exist
+    :type path: str
+    """
     try:
-        os.makedirs(f)
+        os.makedirs(path)
     except OSError:
-        if not os.path.isdir(f):
+        if not os.path.isdir(path):
             raise
 
 
-# File Read/Write Functions
-def file_read(filename):
-    if not os.path.exists(filename): return ""
-    f = codecs.open(filename, "r", "utf-8")
+def file_read(path):
+    """
+    read file from given path
+    :param path: path string
+    :return:
+    """
+    if not os.path.exists(path): return ""
+    f = codecs.open(path, "r", "utf-8")
     d = f.read()
     f.close()
-    return d.replace("\r", "")
+    return d
 
 
-def file_write(filename, data):
-    f = codecs.open(filename, "w", "utf-8")
-    f.write(data.replace("\r", ""))
+def file_write(path, data):
+    """
+    write data to given filename
+    :param path: path string
+    :param data:
+    :return:
+    """
+    f = codecs.open(path, "w", "utf-8")
+    f.write(data)
     f.close()
 
 
 def outputFormatter(out):
+    """
+    normalizes given string
+    :type out: unicode | str
+    :param out:
+    :return: formatted output
+    """
     out = out.replace("\n", " ")
     out = out.replace("\r", " ")
     out = out.replace("\t", " ")
@@ -51,6 +71,14 @@ def outputFormatter(out):
 
 
 def compile(code, exe):
+    """
+    compile given code to exe
+    :type exe: str
+    :type code: str
+    :param code: code string
+    :param exe: path string
+    :return:
+    """
     cmd = "gcc -o " + exe + " -x c -"
     p = subprocess.Popen(cmd, stdin=PIPE, stdout=None, stderr=PIPE, bufsize=1, shell=True)
     o, e = p.communicate(code)
@@ -60,6 +88,16 @@ def compile(code, exe):
 
 
 def execute(exe, inp, out):
+    """
+    execute given exe with given inputs and save output to out
+    :type exe: str
+    :type inp: str
+    :type out: str
+    :param exe: 
+    :param inp: 
+    :param out: 
+    :return: 
+    """
     # run exe using gnu coreutils timeout
     cmd = "timeout 5s " + exe + " 1>" + out
     start = time.time()
@@ -72,6 +110,13 @@ def execute(exe, inp, out):
 
 
 def test(testcases, code):
+    """
+    compiles code and tests it with given test cases
+    :param testcases: test case array
+    :param code: code string
+    :return: error code and time tuple
+    :rtype: (str,int)
+    """
     try:
         # compile code
         compile(code, exe)
@@ -140,5 +185,4 @@ while True:
         print ti
         # TODO: db error handling
         db.commit()
-
     time.sleep(1)  # be nice to the system :)
