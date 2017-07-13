@@ -1,4 +1,4 @@
-from website import app
+from app import app
 
 application = app
 

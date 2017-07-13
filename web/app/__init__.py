@@ -7,12 +7,13 @@ import errors
 from redis import StrictRedis
 
 
-# redis client
-r = StrictRedis(host='localhost', port=6379, db=0)
 
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
+
+# redis client
+r = StrictRedis(host=app.config['REDIS_SERVICE'], port=6379, db=0)
 
 extension_configs = {
     'codehilite':
@@ -21,7 +22,7 @@ extension_configs = {
 
         }
 }
-Markdown(app, extensions=['extra', 'codehilite', 'website.utils.add_attribute'], output_format='html5',
+Markdown(app, extensions=['extra', 'codehilite', 'app.utils.add_attribute'], output_format='html5',
          extension_configs=extension_configs)
 
 errors.init_app(app)

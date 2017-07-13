@@ -4,8 +4,8 @@ import time
 from sqlalchemy import desc
 from forms import *
 from flask.ext.security import roles_accepted, roles_required, login_required, Security, utils, current_user
-from website import app, db, r
-from website.utils.table import Table
+from . import app, db, r
+from .utils.table import Table
 from flask import request, g, render_template, redirect, url_for, session, send_from_directory, flash
 from models import *
 from admin import init_admin
@@ -50,7 +50,7 @@ def news(slug):
 @app.route('/problems/<int:page>')
 def problem_list(page=1):
     problems = sort(Problem, Problem.query, problem_sort_list).paginate(
-            page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
     problems_table = Table(problem_sort_list, problem_column_list, problems)
     return render_template('problem_list.html', title='Problem Listesi', problems_table=problems_table)
@@ -94,7 +94,7 @@ def problem_suggestion(slug):
 def author_profile(username, page=1):
     author = User.query.filter_by(username=username).first_or_404()
     problems = sort(Problem, author.problems, problem_sort_list).paginate(
-            page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
     problems_table = Table(problem_sort_list, problem_column_list, problems)
     return render_template('author_profile.html', title=author.username, author=author, problems_table=problems_table)
@@ -105,7 +105,7 @@ def author_profile(username, page=1):
 def tag(name, page=1):
     tag = Tag.query.filter_by(name=name).first_or_404()
     problems = sort(Problem, tag.problems, problem_sort_list).paginate(
-            page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
+        page=page, per_page=app.config["PRODUCTS_PER_PAGE"],
     )
     problems_table = Table(problem_sort_list, problem_column_list, problems)
     return render_template('tag.html', title=tag.name, tag=tag, problems_table=problems_table)

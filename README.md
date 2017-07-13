@@ -1,16 +1,20 @@
-# Test server
-use vagrant for local test
-database variable DATABASE_URL=postgresql://vagrant:superpass@localhost:5432/website
-
-Link: http://fregram.xyz/
-
-# Deploy 
-
-nginx+uwsgi configs at setup/
+# Docker Support
+Start server
+```
+ docker-compose up
+```
+Reset and populate db
+```
+ docker-compose run --rm web python -m app.script
+```
+Import Problems from md
+```
+docker-compose run --rm web python -m problems.import_db
+```
 
 # Website
 Classic Bootstrap look needs to change.
 
 # CodeJudge
-Prototype working but its need security tests. Probably chroot setup will enough
+Prototype working but its need security tests. Probably chroot setup will enough. And there is only solutions for "Müzekere eşyaları" Problem
 

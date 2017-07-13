@@ -3,8 +3,8 @@ from flask.ext.script.commands import Server, Shell, ShowUrls, Clean
 from flask.ext.security.script import CreateUserCommand, AddRoleCommand, \
     RemoveRoleCommand, ActivateUserCommand, DeactivateUserCommand
 
-from website import app
-from website.script import ResetDB, PopulateDB
+from app import app
+from app.script import ResetDB, PopulateDB
 from problems.import_db import ImportDB
 
 manager = Manager(app)
@@ -22,4 +22,6 @@ manager.add_command('add_role', AddRoleCommand())
 manager.add_command('remove_role', RemoveRoleCommand())
 manager.add_command('deactivate_user', DeactivateUserCommand())
 manager.add_command('activate_user', ActivateUserCommand())
+
+
 
