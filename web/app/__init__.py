@@ -6,8 +6,6 @@ from flaskext.markdown import Markdown
 import errors
 from redis import StrictRedis
 
-
-
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)

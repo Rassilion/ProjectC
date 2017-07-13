@@ -38,4 +38,4 @@ WTForms==2.1
 WTForms-Alchemy==0.14.0
 WTForms-Components==0.9.9
 gunicorn==19.7.1
-
+slugify==0.0.1
