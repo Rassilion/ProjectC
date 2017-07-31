@@ -3,11 +3,14 @@
 import codecs
 import subprocess32 as subprocess
 import os
+
+from sqlalchemy import func
+
 import config
 import sys
 from subprocess32 import PIPE
 from CodeJudge import p, db
-from CodeJudge.models import Submission
+from CodeJudge.models import Submission, Problem
 import time
 from CodeJudge.exceptions import CompileError
 
@@ -165,16 +168,16 @@ def test(testcases, code):
 
 
 # TODO: better listener
-print "start"
+print "Judge start start"
 ensure_dir("submissions")
 while True:
     # get new submission id from redis
     message = p.get_message()
     if message:
         sid = message['data']
-        print sid
         # get submission data from database
         submission = db.query(Submission).filter_by(id=sid).first()
+        print "+++New submission {} from user {}".format(sid, submission.user_id)
         testcases = submission.problem.test_cases
         s = submission.code.encode('utf-8')
         dir = os.path.join(config.submissiondir, sid)
@@ -184,7 +187,13 @@ while True:
         submission.time = ti
         if err == "SUCCESS":
             submission.successful = True
-        print ti
+            scount= db.query(func.count(Submission.id)).filter_by(user_id=submission.user_id, problem_id=submission.problem_id, successful=True).scalar()
+            print "scount {}".format(scount)
+            if scount == 1:
+                problem = db.query(Problem).filter_by(id=submission.problem_id).first()
+                problem.count += 1
+        print "-- finished time {}".format(ti)
+        sys.stdout.flush()
         # TODO: db error handling
         db.commit()
     time.sleep(1)  # be nice to the system :)
