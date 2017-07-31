@@ -66,7 +66,9 @@
                                     sayfanız</a></li>
 
                                 <li><a href="">Ayarlar</a></li>
-
+                                {% if current_user.has_role('admin') or current_user.has_role('author') %}
+                                    <li><a href="{{ url_for('author_panel_add') }}">Yeni problem ekle</a></li>
+                                {% endif %}
                                 <li class="divider"></li>
 
                                 <li><a href="{{ url_for_security('logout') }}">Çıkış</a></li>
@@ -88,7 +90,7 @@
     </nav>
 {% endblock %}
 <div class="container main" role="main">
-{% with errors = get_flashed_messages(category_filter=["success"]) %}
+    {% with errors = get_flashed_messages(category_filter=["success"]) %}
         {% if errors %}
             <div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
