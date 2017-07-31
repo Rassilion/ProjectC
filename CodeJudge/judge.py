@@ -182,6 +182,8 @@ while True:
         err, ti = test(testcases, s)
         submission.error = err
         submission.time = ti
+        if err == "SUCCESS":
+            submission.successful = True
         print ti
         # TODO: db error handling
         db.commit()
