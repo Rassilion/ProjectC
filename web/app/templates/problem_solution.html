@@ -19,12 +19,10 @@
                 <div class="row"><h3><span class="label label-success">Çözüldü</span>
                     <span class="label label-danger">Hatalı</span></h3></div>
                 <div class="row"><p>Eski kodlar: </p></div>
-                <div class="row"><p>Ben kodumu kendi editorumde yazarım sizin js editorunuze kalmadık!</p></div>
+                <div class="row"><p>Kod yükle</p></div>
             {% endif %}
-            <div class="row"><a href="{{ url_for('problem_suggestion',slug=problem.slug) }}">Soru yanlış/Net değil
-                yazarı getirin bana</a></div>
-            <div class="row"><a href="{{ url_for('problem',slug=problem.slug) }}">Geri probleme dön kendim çözmüş gibi
-                yapacam</a></div>
+            <div class="row"><a href="{{ url_for('problem_suggestion',slug=problem.slug) }}">Problem hakkında öneride bulun</a></div>
+            <div class="row"><a href="{{ url_for('problem',slug=problem.slug) }}">Probleme dön</a></div>
         </div>
 
     </div>
